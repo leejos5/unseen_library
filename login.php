@@ -1,13 +1,14 @@
+<?php require_once('config.php'); ?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
 		<title>Login</title>
-		<link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.min.css">
+		<link rel="stylesheet" href="https://bootswatch.com/4/solar/bootstrap.min.css">
 	</head>
 	<body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">Unseen Library</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-
              controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -16,18 +17,18 @@
     <div class="collapse navbar-collapse" id="navbarColor02">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home
+          <a class="nav-link" href="index.php">Home
             <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="#">Sign In</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="#">Books</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="#">Location</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-
@@ -49,7 +50,7 @@
   </nav>
 		<div class="login">
 			<h1>Login</h1>
-			<form action="authenticate.php" method="post">
+			<form method = "GET" action="login.php">
 				<label for="username">
 					<i class="fas fa-user"></i>
 				</label>
@@ -59,6 +60,47 @@
 				</label>
 				<input type="password" name="password" placeholder="Password" id="password" required>
 				<input type="submit" value="Login">
+				<?php
+				session_start();
+				$connection = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
+				if (mysqli_connect_errno()) {
+					exit('Failed to connect to MySQL: ' . mysqli_connect_error());
+				}
+				$sql = "SELECT id, user_name, password FROM USERS WHERE user_name
+				LIKE {$_GET['user_name']}";
+				if ($result = mysqli_query($connection, $sql)) {
+					$info = mysqli_fetch_assoc($result);
+					if ($_GET['password'] == $info['password']) {
+						session_regenerate_id();
+						$_SESSION['loggedin'] = TRUE;
+						$_SESSION['name'] = $_GET['user_name'];
+					} else {
+						?>
+						<div class="modal">
+						  <div class="modal-dialog" role="document">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <h5 class="modal-title">Invalid Combination</h5>
+						        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+						          <span aria-hidden="true"></span>
+						        </button>
+						      </div>
+						      <div class="modal-body">
+						        <p>Modal body text goes here.</p>
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-primary">Save changes</button>
+						        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						      </div>
+						    </div>
+						  </div>
+						</div>
+						<?php
+					}
+
+				mysqli_free_result($result);
+			}
+			?>
 			</form>
 		</div>
 	</body>
