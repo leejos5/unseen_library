@@ -1,3 +1,4 @@
+<?php require_once('config.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -17,16 +18,19 @@
 						<li class="nav-item active">
 							<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 						</li>
-      						<li class="nav-item">
-        						<a class="nav-link" href="login.php">Sign In</a>
+						<li class="nav-item">
+  						<a class="nav-link" href="login.php">Sign In</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Books</a>
-					        </li>
+							<a class="nav-link" href="search.php">Search</a>
+		        </li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Location</a>
-					        </li>
-				     	<li class="nav-item dropdown">
+							<a class="nav-link" href="top.php">Top Lists</a>
+		        </li>
+            <li class="nav-about">
+              <a class="nav-link" href="about.php">About</a>
+            </li>
+			     	<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					  Dropdown
 						</a>

@@ -8,7 +8,7 @@
 	</head>
 	<body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Unseen Library</a>
+    <img src="logo.png" alt="Unseen Library Logo" height = "100" width = "100"/>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-
              controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -17,19 +17,22 @@
     <div class="collapse navbar-collapse" id="navbarColor02">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="index.php">Home
-            <span class="sr-only">(current)</span>
-          </a>
+          <a class="nav-link" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Sign In</a>
+          <a class="nav-link" href="login.php">Sign In
+          	<span class="sr-only">(current)</span>
+					</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Books</a>
+          <a class="nav-link" href="search.php">Search</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Location</a>
+          <a class="nav-link" href="top.php">Top Lists</a>
         </li>
+				<li class="nav-about">
+					<a class="nav-link" href="about.php">About</a>
+				</li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-
              haspopup="true" aria-expanded="false">Dropdown</a>
