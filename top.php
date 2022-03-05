@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Search</title>
-		<link rel="stylesheet" href="https://bootswatch.com/4/superhero/bootstrap.min.css">
+		<link rel="stylesheet" href="bootstrap.css">
 	</head>
 	<body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

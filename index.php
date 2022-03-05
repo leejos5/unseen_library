@@ -5,11 +5,11 @@
 		<div>
 			<meta charset="UTF-8">
       		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<link rel="stylesheet" href="https://bootswatch.com/4/solar/bootstrap.min.css">
+			<link rel="stylesheet" href="bootstrap.css">
 	</head>
 	<body style = "background-image: url('librarypro.png')">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<a class="navbar-brand" href="#">Unseen Library</a>
+    	<img src="newnewlogo.png" alt="Unseen Library Logo" height = "100" width = "100"/>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
