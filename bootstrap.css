@@ -2528,7 +2528,7 @@ textarea.form-control-lg {
 }
 
 .form-range {
-  width: 100%;
+  width: 50%;
   height: 1.5rem;
   padding: 0;
   background-color: transparent;
@@ -11253,4 +11253,13 @@ th {
   width: 100px;
   position: relative;
   margin-top: 50px;
+}
+
+input[type="range"] {
+  width: 400px;
+}
+
+#search-body {
+  padding: 5%;
+  padding-top: 0%;
 }

@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="bootstrap.css">
 	</head>
 	<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <img src="newnewlogo.png" alt="Unseen Library Logo" height = "100" width = "100"/>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-
              controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,22 +22,22 @@
           	<a class="nav-link" href="login.php">Sign In</a>
         	</li>
 					<li class="nav-item">
-						<a class="nav-link" href="profile.php">Profile</a>
+						<a class="nav-link" href="profile.php">Profile
+              <span class="sr-only">(current)</span>
+            </a>
 					</li>
         	<li class="nav-item">
           	<a class="nav-link" href="search.php">Search</a>
         	</li>
         	<li class="nav-item">
-          	<a class="nav-link" href="top.php">Top Lists
-            	<span class="sr-only">(current)</span>
-          	</a>
+          	<a class="nav-link" href="top.php">Top Lists</a>
         	</li>
-        	<li class="nav-about">
-          	<a class="nav-link" href="about.php">About</a>
-        	</li>
+					<li class="nav-about">
+						<a class="nav-link" href="about.php">About</a>
+					</li>
         	<li class="nav-item dropdown">
           	<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-
-           		haspopup="true" aria-expanded="false">Dropdown</a>
+             haspopup="true" aria-expanded="false">Dropdown</a>
           	<div class="dropdown-menu">
             	<a class="dropdown-item" href="#">Action</a>
             	<a class="dropdown-item" href="#">Another action</a>

@@ -22,6 +22,9 @@
   						<a class="nav-link" href="login.php">Sign In</a>
 						</li>
 						<li class="nav-item">
+							<a class="nav-link" href="profile.php">Profile</a>
+						</li>
+						<li class="nav-item">
 							<a class="nav-link" href="search.php">Search</a>
 		        </li>
 						<li class="nav-item">

@@ -22,6 +22,9 @@
         <li class="nav-item">
           <a class="nav-link" href="login.php">Sign In</a>
         </li>
+				<li class="nav-item">
+          <a class="nav-link" href="profile.php">Profile</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="search.php">Search
             <span class="sr-only">(current)</span>
@@ -52,53 +55,72 @@
     </div>
   </nav>
 		<div class="search">
-			<h1>Libraries Search</h1>
-			<form method = "GET" action="search.php">
-        <div>
-          <input type="radio" id="book-radio" value="book" name = "search-type"/>
-          <label for="book-radio">Books</label>
-        </div>
-        <div>
-          <input type="radio" id="location-radio" value="location" name = "search-type"/>
-          <label for="location-radio">Locations</label>
-        </div>
-        <div>
-          <input type="text" id="title" name="search-name" placeholder="Search for a title..."/>
-          <input type="text" id="author" name="search-author" placeholder="Author Name" />
-        </div>
-        <select name = "min-rating">
-          <option selected>Minimum Rating</option>
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-        </select>
-        <select name = "genre">
-          <option selected>Select a Genre</option>
-          <?php
-          $connection = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
-          if (mysqli_connect_errno()) {
-            die(mysqli_connect_error());
-          }
-          $sql = "SELECT DISTINCT Genre FROM Books";
-          if ($result = mysqli_query($connection, $sql)) {
-            while ($row = mysqli_fetch_assoc($result)) {
-              echo '<option value="' . $row['Genre'] . '">';
-              echo $row['Genre'];
-              echo "</option>";
-            }
-            mysqli_free_result($result);
-          }
-          ?>
-        </select>
-			</form>
+			<section id="about-header">
+				<h1>Libraries Search</h1>
+				<hr />
+			</section>
+			<section id="search-body">
+				<p>
+					Search our libraries database by books or by locations.
+				</p>
+				<form method = "GET" action="search.php">
+					<p>Search by:
+					</p>
+	        <div>
+	          <input type="radio" id="book-radio" value="book" name = "search-type"/>
+	          <label for="book-radio">Books</label>
+	        </div>
+	        <div>
+	          <input type="radio" id="location-radio" value="location" name = "search-type"/>
+	          <label for="location-radio">Locations</label>
+	        </div>
+					<br />
+	        <div>
+	          <input type="text" id="title" name="search-name" placeholder="Search for a title..."/>
+	          <input type="text" id="author" name="search-author" placeholder="Author Name" />
+						<select name = "genre">
+							<option selected>Select a Genre</option>
+							<?php
+							$connection = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
+							if (mysqli_connect_errno()) {
+								die(mysqli_connect_error());
+							}
+							$sql = "SELECT DISTINCT Genre FROM Books";
+							if ($result = mysqli_query($connection, $sql)) {
+								while ($row = mysqli_fetch_assoc($result)) {
+									echo '<option value="' . $row['Genre'] . '">';
+									echo $row['Genre'];
+									echo "</option>";
+								}
+								mysqli_free_result($result);
+							}
+							?>
+						</select>
+	        </div>
+					<br />
+					<div>
+						<label for="customRange1" class="form-label">Minimum Rating</label>
+						<input type="range" min="1" max="10" class="form-range" id="ratingRange" oninput="this.nextElementSibling.value = this.value">
+						<output name="rating"></output>
+					</div>
+					<br />
+
+
+				<!-- implement php to fill table -->
+				<table class="table table-hover">
+						<thead>
+								<tr class="table-success">
+										<th scope="col">Title</th>
+										<th scope="col">Author</th>
+										<th scope="col">ISBN</th>
+										<th scope="col">Year</th>
+										<th scope="col">Publisher</th>
+										<th scope="col">Location</th>
+								</tr>
+						</thead>
+					</table>
+				</form>
+			</section>
 		</div>
 	</body>
 </html>
