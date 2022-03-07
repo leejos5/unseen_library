@@ -33,33 +33,17 @@
             <li class="nav-about">
               <a class="nav-link" href="about.php">About</a>
             </li>
-			     	<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					  Dropdown
-						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">Action</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">Another action</a>
-				  		<div class="dropdown-divider"></div>
-				  		<a class="dropdown-item" href="#">Something else here</a>
-						</div>
-					</li>
-				</ul>
-				<form class="form-inline my-2 my-lg-0">
-					<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-				</form>
-			</div>
-		</nav>
-    <div class="jumbotron">
-      <h1 class="display-3">Hello, world!</h1>
-      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+          </li>
+      </ul>
+      </div>
+</nav>
+		  <div class="jumbotron">
+      <h1 class="display-4">Welcome to Unseen Library</h1>
+      <p class="lead">This is unseen library that connect many bookstores/libraries for the users to get the closet location and compare prices of different bookstores.</p>
       <hr class="my-4">
-      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-      <p class="lead">
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" role="button">Thank You</a>
       </p>
     </div>
-	</body>
+</body>
 </html>
