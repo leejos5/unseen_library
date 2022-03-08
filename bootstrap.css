@@ -402,7 +402,8 @@ textarea {
 
 fieldset {
   min-width: 0;
-  padding: 0;
+  padding: 40px;
+  padding-top: 0px;
   margin: 0;
   border: 0;
 }
@@ -609,19 +610,6 @@ progress {
 
 .blockquote-footer::before {
   content: "\2014\00A0";
-}
-
-.img-fluid {
-  max-width: 100%;
-  height: auto;
-}
-
-.img-thumbnail {
-  padding: 0.25rem;
-  background-color: #fff;
-  border: 1px solid #eceeef;
-  max-width: 100%;
-  height: auto;
 }
 
 .figure {
@@ -4791,7 +4779,7 @@ fieldset:disabled .btn {
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-width: 0;
+  min-width: 500px;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
@@ -11225,19 +11213,21 @@ th {
   color: inherit;
 }
 
-.ddd {
-  vertical-align: center;
+
+
+.centered {
+  vertical-align: middle;
   justify-content: center;
 }
 
 #about-header {
   padding: 5%;
-  padding-bottom: 0px;
+  padding-bottom: 0;
 }
 
 #illustrations-container {
   display: flex;
-  vertical-align: center;
+  vertical-align: middle;
   justify-content: center;
 }
 
@@ -11261,5 +11251,5 @@ input[type="range"] {
 
 #search-body {
   padding: 5%;
-  padding-top: 0%;
+  padding-top: 0;
 }
