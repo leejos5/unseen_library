@@ -29,9 +29,6 @@
           <a class="nav-link" href="search.php">Search</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="top.php">Top Lists</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="social.php">Social
             <span class="sr-only">(current)</span>
           </a>
@@ -73,12 +70,13 @@
               if (mysqli_connect_errno()) {
                 die(mysqli_connect_error());
               }
-              $sql = "SELECT User_name FROM Users WHERE User_name LIKE {$_GET['search-user']}";
+              $sql = "SELECT user_name FROM users HAVING user_name = '{$_GET['search-user']}'";
               if ($result = mysqli_query($connection, $sql)) {
                 while($row = mysqli_fetch_assoc($result)) {
                   ?>
                   <tr>
-                    <td><?php echo $row['User_name'] ?></td>
+                    <td><?php echo $row['user_name'] ?></td>
+                    <td><a href="compare.php">Compare Lists</a></td>
                   </tr>
                   <?php
                 }
