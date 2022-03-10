@@ -44,6 +44,14 @@
 	<section id="about-header">
 		<h1>Login and Signup</h1>
 		<hr />
+		<div>
+			<?php
+			if (isset($_POST['register'])) {
+				echo 'User submmited.';
+			}
+
+			?>
+		</div>
 		<div id="illustrations-container">
 			<div class="card border-primary mb-3">
 	  		<div class="card-header">Login</div>
@@ -62,7 +70,7 @@
 			</div>
 			<div class="card border-primary mb-3">
 	  		<div class="card-header">Sign-Up</div>
-				<form>
+				<form action = "login.php" method ="post">
 				  <fieldset>
 				    <div class="form-group">
 				      <label for="exampleInputEmail1" class="form-label mt-4">Email address</label>
@@ -78,7 +86,7 @@
 				      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
 				    </div>
 						<br />
-						<button type="submit" class="btn btn-primary">Submit</button>
+						<button type="submit" name = "register" class="btn btn-primary">Submit</button>
 					</fieldset>
 				</form>
 			</div>
