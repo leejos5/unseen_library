@@ -30,6 +30,9 @@
         	<li class="nav-item">
           	<a class="nav-link" href="top.php">Top Lists</a>
         	</li>
+					<li class="nav-item">
+						<a class="nav-link" href="social.php">Social</a>
+					</li>
 					<li class="nav-about">
 						<a class="nav-link" href="about.php">About
 							<span class="sr-only">(current)</span>

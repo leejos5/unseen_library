@@ -11078,6 +11078,11 @@ fieldset:disabled .btn {
   font-weight: 600;
 }
 
+#profile {
+  display: flex;
+
+}
+
 .navbar-nav .nav-link {
   padding-top: .715rem;
   padding-bottom: .715rem;
@@ -11248,6 +11253,11 @@ th {
 input[type="range"] {
   width: 400px;
 }
+
+.desc {
+  justify-content: space-between;
+}
+
 
 #search-body {
   padding: 5%;
