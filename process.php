@@ -40,7 +40,7 @@
 
     $_SESSION['user_name'] = $username;
     echo "Hi <b>" .$username . "</b>. You login successfully <a href=''>Exit</a>";
-    die();
+    //die();
     $connect->close();
     
 ?>
