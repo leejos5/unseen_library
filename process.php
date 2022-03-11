@@ -15,7 +15,7 @@
     }
   
 
-    $password = md5($password);
+    //$password = md5($password);
   
 
     $query = "SELECT user_name, password FROM users WHERE user_name ='$username'";
@@ -34,7 +34,6 @@
     
     if ($password != $row['password']) {
     echo "You enter a wrong password, please enter again <a href='javascript: history.go(-1)'>Back</a>";
-    echo "$row";
     exit;
     }
   
