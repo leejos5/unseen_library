@@ -4,8 +4,6 @@ $username = "testuser";
 $password = "mypassword";
 $dbname = "unseen_library";
 
-
-
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
@@ -24,10 +22,8 @@ if (isset($_POST["register"])) {
     
     $sql ="INSERT INTO `users` (`user_name`, `first_name`, `last_name`, `email`, `phone`, `password`) 
     VALUES ('$username','$First_name','$Last_name','$email','$phone','$password')";
-    //$stmtinsert = $db ->prepare($sql);
-    //$result = $stmtinsert->execute([$username, $First_name, $Last_name, $email, $phone, $password])
     if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
+        echo "You had registered successfully";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }

@@ -51,19 +51,21 @@
 			<div class="card border-primary mb-3">
 	  		<div class="card-header">Login</div>
 
-			  <form action = "signup.php" method ="post">
+			  <form action = "process.php" method ="post">
 					<fieldset>
 					<div class="form-group">
 						<label for="user-name" class="form-label mt-4">Username</label>
-						<input type="user-name" class="form-control" id="user-name" aria-describedby="usernameHelp" placeholder="Enter username">
+						<input type="user-name" class="form-control" name = "user_name" id="user-name" aria-describedby="usernameHelp" placeholder="Enter username">
 					</div>
 					<div class="form-group">
 						<label for="password" class="form-label mt-4">Password</label>
-						<input type="password" class="form-control" id="password" placeholder="Password">
+						<input type="password" class="form-control" name = password id="password" placeholder="Password">
 					</div>
 					<br />
-					<button type="submit" class="btn btn-primary">Login</button>
+					<button type="submit" name = "login" class="btn btn-primary">Login</button>
+				
 					</fieldset>
+					
 				</form>
 			</div>
 			<div class="card border-primary mb-3">
