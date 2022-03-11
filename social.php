@@ -67,7 +67,7 @@ session_start(); ?>
             if (isset($_GET['search-user'])) { // is this how you access the input field?
               ?>
 				</form>
-				<form action="test.php" method="POST">
+				<form action="setOther.php" method="POST">
           <table class="table table-hover">
               <thead>
                   <tr class="table-success">
@@ -100,8 +100,6 @@ session_start(); ?>
 					</table>
 					<input type="Submit" class="btn btn-primary" name="submit" value="Search/Set Comparison" />
 					<a href="compare.php" class="btn btn-success">Go!</a>
-				</form>
-				<form action="compare.php">
 				</form>
 			</section>
 		</div>

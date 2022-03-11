@@ -1,5 +1,11 @@
 <?php require_once('config.php');
-session_start(); ?>
+session_start();
+$user_id = $_SESSION['user_id'];
+$user_name = $_SESSION['user_fname'] . " " . $_SESSION['user_lname'];
+$user_age = $_SESSION['user_age'];
+$user_bd = $_SESSION['user_bd'];
+$user_email = $_SESSION['user_email'];
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -40,15 +46,15 @@ session_start(); ?>
     	</div>
   	</nav>
 		<section id="about-header">
-			<h1>FirstName LastName</h1>
+			<h1><?php echo $user_name ?></h1>
 			<hr />
 			<div id="profile">
 				<img src="portrait.png" class="m-xxl-4" height=300px width=300px />
 				<div class="m-xxl-4 desc">
-					<h3>username</h3>
-					<h3>age</h3>
-					<h3>birthday</h3>
-					<h3>email</h3>
+					<h3><?php echo $_SESSION['user_name'] ?></h3>
+					<h3><?php echo $user_age ?> Years Old</h3>
+					<h3><?php echo $user_bd ?></h3>
+					<h3><?php echo $user_email ?></h3>
 				</div>
 			</div>
 			<hr />
@@ -63,7 +69,7 @@ session_start(); ?>
 					if (mysqli_connect_errno()) {
 						die(mysqli_connect_error());
 					}
-					$sql= "SELECT List_id, Name FROM READING_LISTS WHERE User_id = 1"; // Have user_id = user id from session!!!
+					$sql= "SELECT List_id, Name FROM READING_LISTS WHERE User_id = '${user_id}'"; // Have user_id = user id from session!!!
 					if ($result = mysqli_query($connection, $sql)) {
 						while ($row = mysqli_fetch_assoc($result)) {
 							echo '<option value="' . $row['List_id'] . '">';

@@ -47,7 +47,7 @@ $username = $_SESSION['otherUser']; ?>
         <div id="profile">
   				<img src="portrait.png" class="m-xxl-4" height=300px width=300px />
   				<div class="m-xxl-4 desc">
-  					<h3>username</h3>
+  					<h3><?php echo $_SESSION['user_name'] ?></h3>
   				</div>
         </div>
         <div id="profile">
@@ -73,7 +73,7 @@ $username = $_SESSION['otherUser']; ?>
 					if (mysqli_connect_errno()) {
 						die(mysqli_connect_error());
 					}
-					$sql= "SELECT List_id, Name FROM READING_LISTS WHERE User_id = 1"; // Have user_id = user id from session!!!
+					$sql= "SELECT List_id, Name FROM READING_LISTS WHERE User_id = '{$_SESSION['user_id']}'";
 					if ($result = mysqli_query($connection, $sql)) {
 						while ($row = mysqli_fetch_assoc($result)) {
 							echo '<option value="' . $row['List_id'] . '">';

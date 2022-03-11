@@ -55,6 +55,7 @@
 					</div>
 					<br />
 					<button type="submit" class="btn btn-primary">Submit</button>
+					<a href="testSession.php">Test Session Start</a>
 				</fieldset>
 			</div>
 			<div class="card border-primary mb-3">
