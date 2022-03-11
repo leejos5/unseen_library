@@ -1,4 +1,5 @@
-<?php require_once('config.php'); ?>
+<?php require_once('config.php');
+session_start(); ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -48,17 +49,25 @@
 				<p>
 					Search for other users to see what they're reading.
 				</p>
+				<p>
+					Hit the Search/Set Comparison button to set the person you want to compare with to the one you selected.
+				</p>
+				<p>
+					After you have made your selection, hit "Go!" to compare!
+				</p>
 				<form method = "GET" action="social.php">
 					<p>Search by:
 					</p>
 	        <div>
-	          <input type="text" id="userId" name="search-user" placeholder="Search by id" onchange="this.form.submit()"/>
+	          <input type="text" id="userId" name="search-user" placeholder="Search by Username" onchange="this.form.submit()"/>
 	        </div>
 					<br />
           <?php
           if ($_SERVER["REQUEST_METHOD"] == "GET") {
             if (isset($_GET['search-user'])) { // is this how you access the input field?
               ?>
+				</form>
+				<form action="test.php" method="POST">
           <table class="table table-hover">
               <thead>
                   <tr class="table-success">
@@ -70,13 +79,15 @@
               if (mysqli_connect_errno()) {
                 die(mysqli_connect_error());
               }
-              $sql = "SELECT user_name FROM users HAVING user_name = '{$_GET['search-user']}'";
+              $sql = "SELECT user_name FROM users HAVING user_name LIKE '%{$_GET['search-user']}%'";
               if ($result = mysqli_query($connection, $sql)) {
                 while($row = mysqli_fetch_assoc($result)) {
                   ?>
                   <tr>
-                    <td><?php echo $row['user_name'] ?></td>
-                    <td><a href="compare.php">Compare Lists</a></td>
+											<td>
+												<input type="radio" id="<?php echo $row['user_name'] ?>" value="<?php echo $row['user_name'] ?>" name="username" />
+												<label for="<?php echo $row['user_name'] ?>"><?php echo $row['user_name'] ?></label>
+											</td>
                   </tr>
                   <?php
                 }
@@ -86,8 +97,11 @@
           }
           ?>
 				<!-- implement php to fill table -->
-
 					</table>
+					<input type="Submit" class="btn btn-primary" name="submit" value="Search/Set Comparison" />
+					<a href="compare.php" class="btn btn-success">Go!</a>
+				</form>
+				<form action="compare.php">
 				</form>
 			</section>
 		</div>

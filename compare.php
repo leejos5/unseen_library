@@ -1,4 +1,6 @@
-<?php require_once('config.php'); ?>
+<?php require_once('config.php');
+session_start();
+$username = $_SESSION['otherUser']; ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -51,7 +53,7 @@
         <div id="profile">
   				<img src="portrait.png" class="m-xxl-4" height=300px width=300px />
   				<div class="m-xxl-4 desc">
-  					<h3>username</h3>
+  					<h3><?php echo $username?></h3>
   				</div>
         </div>
 			</div>
@@ -65,7 +67,7 @@
       <br />
 			<form method="GET" action="compare.php">
 				<select name="list1" required>
-					<option selected>First Reading List</option>
+					<option value="">First Reading List</option>
 					<?php
 					$connection = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
 					if (mysqli_connect_errno()) {
@@ -82,16 +84,16 @@
 					}
 					?>
 				</select>
-        <select name="list2" onchange="this.form.submit()" required>
-          <option selected>Second Reading List</option>
+        <select name="list2" required>
+          <option value="">Second Reading List</option>
           <br />
           <?php
           $connection = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
           if (mysqli_connect_errno()) {
             die(mysqli_connect_error());
           }
-          $sql= "SELECT List_id, Name FROM READING_LISTS WHERE User_id = 3"; // Have user_id = user id from session!!!
-          if ($result = mysqli_query($connection, $sql)) {
+          $sql= "SELECT List_id, Name FROM Reading_Lists WHERE User_id = (SELECT User_id FROM Users WHERE User_name LIKE '${username}')";
+					if ($result = mysqli_query($connection, $sql)) {
             while ($row = mysqli_fetch_assoc($result)) {
               echo '<option value="' . $row['List_id'] . '">';
               echo $row['Name'] , ' (' . $row['List_id'] . ')';
@@ -101,6 +103,7 @@
           }
           ?>
         </select>
+				<input type="Submit" value="Compare!" />
 				<?php
 				if ($_SERVER["REQUEST_METHOD"] == "GET") {
 					if (isset($_GET['list1']) && isset($_GET['list2'])) {

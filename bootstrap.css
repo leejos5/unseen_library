@@ -11263,8 +11263,8 @@ input[type="range"] {
   justify-content: space-between;
 }
 
-#columns {
-
+.compareButtons {
+  height: 50px;
 }
 
 
