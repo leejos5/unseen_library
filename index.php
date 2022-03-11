@@ -37,9 +37,29 @@
       </ul>
       </div>
 </nav>
-		  <div class="jumbotron">
-      <h1 class="display-4">Welcome to Unseen Library</h1>
-      <p class="lead">This is unseen library that connect many bookstores/libraries for the users to get the closet location and compare prices of different bookstores.</p>
+		 <div class="jumbotron">
+               <h1 class="display-4">Welcome to Unseen Library</h1>
+
+         		  		<br />
+
+         		 	 <div class="illustrations-container">
+         				<img class="about" src="Alice.jpg"/>
+         				<img class="about" src="TTTH.jpg" />
+         				<img class="about" src="lastman.jpg"  />
+         				<img class="about"src=
+         					"Mastersofhorror.jpg"/>
+         				<img class="about" src="Rabbit.jpg"  />
+         			</div>
+
+               <p class="lead">Choose any genre you like, read your favorite book from your favorite bookstores or libraries.
+               Create friendships to readers like you, rate your best books and best authors of the year. </p>
+         			<div class="illustrations-container">
+         				<img class="about" src="storm.jpg"  />
+         				<img class="about" src="womaninwhite.jpg"/>
+         				<img class="about" src="Wuthering.jpg"  />
+         				<img class="about" src="treasure.jpg"  />
+         				<img class="about" src="Prisoner.jpg"  />
+         			</div>
       <hr class="my-4">
             <p class="lead">
         <a class="btn btn-primary btn-lg" href="#" role="button">Thank You</a>
