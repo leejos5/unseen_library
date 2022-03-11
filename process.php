@@ -15,7 +15,7 @@
     }
   
 
-    $password = md5($password);
+    //$password = md5($password);
   
 
     $query = "SELECT user_name, password FROM users WHERE user_name ='$username'";
