@@ -29,9 +29,6 @@
         <li class="nav-item">
           <a class="nav-link" href="search.php">Search</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="top.php">Top Lists</a>
-        </li>
 				<li class="nav-item">
 					<a class="nav-link" href="social.php">Social</a>
 				</li>
@@ -62,11 +59,12 @@
 						<input type="password" class="form-control" name = password id="password" placeholder="Password">
 					</div>
 					<br />
+
 					<button type="submit" name = "login" class="btn btn-primary">Login</button>
-				
-					</fieldset>
-					
-				</form>
+					<a href="testSession.php">Test Session Start</a>
+				</fieldset>
+        </form>
+
 			</div>
 			<div class="card border-primary mb-3">
 	  		<div class="card-header">Sign-Up</div>

@@ -1,11 +1,6 @@
 <?php require_once('config.php');
 session_start();
-$user_id = $_SESSION['user_id'];
-$user_name = $_SESSION['user_fname'] . " " . $_SESSION['user_lname'];
-$user_age = $_SESSION['user_age'];
-$user_bd = $_SESSION['user_bd'];
-$user_email = $_SESSION['user_email'];
-?>
+$username = $_SESSION['otherUser']; ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -29,15 +24,15 @@ $user_email = $_SESSION['user_email'];
           	<a class="nav-link" href="login.php">Sign In</a>
         	</li>
 					<li class="nav-item">
-						<a class="nav-link" href="profile.php">Profile
-              <span class="sr-only">(current)</span>
-            </a>
+						<a class="nav-link" href="profile.php">Profile</a>
 					</li>
         	<li class="nav-item">
           	<a class="nav-link" href="search.php">Search</a>
         	</li>
 					<li class="nav-item">
-						<a class="nav-link" href="social.php">Social</a>
+						<a class="nav-link" href="social.php">Social
+              <span class="sr-only">(current)</span>
+            </a>
 					</li>
 					<li class="nav-about">
 						<a class="nav-link" href="about.php">About</a>
@@ -46,30 +41,39 @@ $user_email = $_SESSION['user_email'];
     	</div>
   	</nav>
 		<section id="about-header">
-			<h1><?php echo $user_name ?></h1>
+			<h1>Compare Lists</h1>
 			<hr />
-			<div id="profile">
-				<img src="portrait.png" class="m-xxl-4" height=300px width=300px />
-				<div class="m-xxl-4 desc">
-					<h3><?php echo $_SESSION['user_name'] ?></h3>
-					<h3><?php echo $user_age ?> Years Old</h3>
-					<h3><?php echo $user_bd ?></h3>
-					<h3><?php echo $user_email ?></h3>
-				</div>
+      <div id="profileContainer">
+        <div id="profile">
+  				<img src="portrait.png" class="m-xxl-4" height=300px width=300px />
+  				<div class="m-xxl-4 desc">
+  					<h3><?php echo $_SESSION['user_name'] ?></h3>
+  				</div>
+        </div>
+        <div id="profile">
+  				<img src="portrait.png" class="m-xxl-4" height=300px width=300px />
+  				<div class="m-xxl-4 desc">
+  					<h3><?php echo $username?></h3>
+  				</div>
+        </div>
 			</div>
 			<hr />
 		</section>
 		<section id="about-header">
-			<h1>My Reading Lists</h1>
-			<form method="GET" action="profile.php">
-				<select name="list" onchange="this.form.submit()">
-					<option selected>Select a Reading List</option>
+			<h1>Pick the Reading Lists</h1>
+      <p>
+         Wnat to see what books you and your friends have in common?
+      </p>
+      <br />
+			<form method="GET" action="compare.php">
+				<select name="list1" required>
+					<option value="">First Reading List</option>
 					<?php
 					$connection = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
 					if (mysqli_connect_errno()) {
 						die(mysqli_connect_error());
 					}
-					$sql= "SELECT List_id, Name FROM READING_LISTS WHERE User_id = '${user_id}'"; // Have user_id = user id from session!!!
+					$sql= "SELECT List_id, Name FROM READING_LISTS WHERE User_id = '{$_SESSION['user_id']}'";
 					if ($result = mysqli_query($connection, $sql)) {
 						while ($row = mysqli_fetch_assoc($result)) {
 							echo '<option value="' . $row['List_id'] . '">';
@@ -80,9 +84,29 @@ $user_email = $_SESSION['user_email'];
 					}
 					?>
 				</select>
+        <select name="list2" required>
+          <option value="">Second Reading List</option>
+          <br />
+          <?php
+          $connection = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
+          if (mysqli_connect_errno()) {
+            die(mysqli_connect_error());
+          }
+          $sql= "SELECT List_id, Name FROM Reading_Lists WHERE User_id = (SELECT User_id FROM Users WHERE User_name LIKE '${username}')";
+					if ($result = mysqli_query($connection, $sql)) {
+            while ($row = mysqli_fetch_assoc($result)) {
+              echo '<option value="' . $row['List_id'] . '">';
+              echo $row['Name'] , ' (' . $row['List_id'] . ')';
+              echo "</option>";
+            }
+            mysqli_free_result($result);
+          }
+          ?>
+        </select>
+				<input type="Submit" value="Compare!" />
 				<?php
 				if ($_SERVER["REQUEST_METHOD"] == "GET") {
-					if (isset($_GET['list'])) {
+					if (isset($_GET['list1']) && isset($_GET['list2'])) {
 						?>
 				<table class="table table-hover">
 						<thead>
@@ -99,9 +123,10 @@ $user_email = $_SESSION['user_email'];
 							die(mysqli_connect_error());
 						}
 						$sql = "SELECT Title, First_name, Last_name, Isbn, Year, Publisher FROM Authors a
-						JOIN (SELECT Title, Author_id, Isbn, Year, Publisher FROM Books WHERE Book_id IN
-							(SELECT Book_id FROM Reading_List_Entries WHERE List_id = {$_GET['list']})) b
-					 	ON a.Author_id = b.Author_id";
+					           JOIN (SELECT Title, Author_id, Isbn, Year, Publisher FROM Books WHERE Book_id IN (
+                    SELECT Book_id FROM Reading_List_Entries WHERE List_id = {$_GET['list1']} AND
+                    Book_id IN (SELECT Book_id FROM Reading_List_Entries WHERE List_id = {$_GET['list2']}))) b
+                    ON a.Author_id = b.Author_id";
 						if ($result = mysqli_query($connection, $sql)) {
 							while($row = mysqli_fetch_assoc($result)) {
 							?>

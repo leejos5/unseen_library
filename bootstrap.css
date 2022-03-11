@@ -11258,6 +11258,11 @@ input[type="range"] {
   justify-content: space-between;
 }
 
+#profileContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
 
 #search-body {
   padding: 5%;
