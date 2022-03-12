@@ -11280,14 +11280,6 @@ input[type="range"] {
     float:left;
 }
 
-.image__img {
-    display: block;
-    width: 100%;
-    display: flex;
-    vertical-align: middle;
-    justify-content: center;
-}
-
 .image__overlay {
     position: absolute;
     top: 0;
@@ -11312,10 +11304,6 @@ input[type="range"] {
 
 .image__overlay:hover {
     opacity: 1;
-}
-
-.image__overlay:hover > * {
-    transform: translateY(0);
 }
 
 .image__price {
