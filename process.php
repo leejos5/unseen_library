@@ -5,42 +5,45 @@
     if (isset($_POST['login']))
 
     include('connect.php');
-    
+
     $username = addslashes($_POST['user_name']);
     $password = addslashes($_POST['password']);
-    
+
     if (!$username || !$password) {
-        echo "Please enter both username and password <a href='javascript: history.go(-1)'>Back</a>";
+        echo '<script>alert("Please enter both username and password.");location="login.php"</script>';
     exit;
     }
-  
+
 
     //$password = md5($password);
-  
 
-    $query = "SELECT user_name, password FROM users WHERE user_name ='$username'";
-    
+
+    $query = "SELECT * FROM users WHERE user_name ='$username'";
+
 
     $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
 
     if (!$result) {
-        echo "You entered wrong user or wrong password!";
-    } else {
-        echo "Login sucessfully!";
+        echo '<script>alert("You entered wrong user or wrong password!");location="login.php"</script>';
     }
-  
 
     $row = mysqli_fetch_array($result);
-    
+
     if ($password != $row['password']) {
-    echo "You enter a wrong password, please enter again <a href='javascript: history.go(-1)'>Back</a>";
+      echo '<script>alert("You entered wrong user or wrong password!");location="login.php"</script>';
     exit;
     }
-  
 
-    $_SESSION['user_name'] = $username;
-    echo "Hi <b>" .$username . "</b>. You login successfully <a href=''>Exit</a>";
+
+    $_SESSION['user_name'] = $row['user_name'];
+    $_SESSION['user_id'] = $row['user_id'];
+    $_SESSION['user_email'] = $row['email'];
+    $_SESSION['user_fname'] = $row['first_name'];
+    $_SESSION['user_lname'] = $row['last_name'];
+    $_SESSION['user_phone'] = $row['phone'];
+    $_SESSION['user_age'] = $row['age'];
+    echo '<script>alert("Login successful!");location="index.php"</script>';
     //die();
     $connect->close();
-    
+
 ?>
