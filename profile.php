@@ -49,8 +49,8 @@ $user_email = $_SESSION['user_email'];
 			<h1><?php echo $user_name ?></h1>
 			<hr />
 			<div id="profile">
-				<img src="portrait.png" class="m-xxl-4" height=300px width=300px />
-				<div class="m-xxl-4 desc">
+				<img src="portrait.png" class="m-xxl-4 pic" height=300px width=300px />
+				<div class="m-xxl-4 desc pic">
 					<h3><?php echo $_SESSION['user_name'] ?></h3>
 					<h3><?php echo $user_age ?> Years Old</h3>
 					<h3><?php echo $user_bd ?></h3>

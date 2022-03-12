@@ -58,11 +58,12 @@ error_reporting(E_ERROR | E_PARSE);
 			</section>
 			<section id="search-body">
 				<p>
-					Search our libraries database by books or by locations.
+					Search our libraries database by books or by locations. Location search is at the bottom of the page.
+				</p>
+				<p>
+					If you would like to add it to your reading list, choose one below the table.
 				</p>
 				<form method="GET" action="search.php">
-					<p>Search by:
-					</p>
 					<br />
 	        <div>
 	          <input type="text" id="title" name="search-name" placeholder="Search for a title..."/>
@@ -95,7 +96,7 @@ error_reporting(E_ERROR | E_PARSE);
 						<label for="customRange1" class="form-label">Minimum Rating</label>
 						<input type="range" min="1" max="10" class="form-range" id="ratingRange" oninput="this.nextElementSibling.value = this.value">
 						<output name="rating"></output>
-						<button type="Submit" class="btn btn primary">Go!</button>
+						<button type="Submit" class="btn btn-success">Go!</button>
 					</div>
 					<br />
 				</form>
@@ -136,6 +137,7 @@ error_reporting(E_ERROR | E_PARSE);
 									<td><?php echo $row['Year'] ?></td>
 									<td><?php echo $row['Publisher'] ?></td>
 									<td><?php echo $row['Address'] ?></td>
+									<td>placeholder</td>
 									<td>
 										<form method ="POST" action="addToList.php">
 											<input type="hidden" name="book_id" value="<?php echo $row['Book_id']?>"/>
@@ -190,7 +192,7 @@ error_reporting(E_ERROR | E_PARSE);
 						<label for="customRange1" class="form-label">Minimum Rating</label>
 						<input type="range" min="1" max="10" class="form-range" id="ratingRange" name="minLocationRating" oninput="this.nextElementSibling.value = this.value">
 						<output name="rating"></output>
-						<button type="Submit" class="btn btn primary">Go!</button>
+						<button type="Submit" class="btn btn-success">Go!</button>
 					</div>
 					<br />
 				</form>

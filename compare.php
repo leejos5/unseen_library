@@ -45,14 +45,14 @@ $username = $_SESSION['otherUser']; ?>
 			<hr />
       <div id="profileContainer">
         <div id="profile">
-  				<img src="portrait.png" class="m-xxl-4" height=300px width=300px />
-  				<div class="m-xxl-4 desc">
+  				<img src="portrait.png" class="m-xxl-4 pic" height=300px width=300px />
+  				<div class="m-xxl-4 desc pic">
   					<h3><?php echo $_SESSION['user_name'] ?></h3>
   				</div>
         </div>
         <div id="profile">
-  				<img src="portrait.png" class="m-xxl-4" height=300px width=300px />
-  				<div class="m-xxl-4 desc">
+  				<img src="portrait.png" class="m-xxl-4 pic" height=300px width=300px />
+  				<div class="m-xxl-4 desc pic">
   					<h3><?php echo $username?></h3>
   				</div>
         </div>

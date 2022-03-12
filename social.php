@@ -53,7 +53,7 @@ session_start(); ?>
 					Hit the Search/Set Comparison button to set the person you want to compare with to the one you selected.
 				</p>
 				<p>
-					After you have made your selection, hit "Go!" to compare!
+					After you have made your selection and set the selection, hit "Go!" to compare!
 				</p>
 				<form method = "GET" action="social.php">
 					<p>Search by:
