@@ -41,38 +41,32 @@
 	<section id="about-header">
 		<h1>Login and Signup</h1>
 		<hr />
-		<div>
-
-		</div>
 		<div id="illustrations-container">
-			<div class="card border-primary mb-3">
-	  		<div class="card-header">Login</div>
-
+			<div class="card border-primary mb-3 pic">
+	  		<div class="card-header titles">Login</div>
 			  <form action = "process.php" method ="post">
 					<fieldset>
 					<div class="form-group">
 						<label for="user-name" class="form-label mt-4">Username</label>
-						<input type="user-name" class="form-control" name = "user_name" id="user-name" aria-describedby="usernameHelp" placeholder="Enter username">
+						<input type="user-name" class="form-control" name = "user_name" id="user-name" aria-describedby="usernameHelp" placeholder="Enter Username">
 					</div>
 					<div class="form-group">
 						<label for="password" class="form-label mt-4">Password</label>
-						<input type="password" class="form-control" name = password id="password" placeholder="Password">
+						<input type="password" class="form-control" name = password id="password" placeholder="Enter Password">
 					</div>
 					<br />
-
 					<button type="submit" name = "login" class="btn btn-primary">Login</button>
 					<a href="testSession.php">Test Session Start</a>
 				</fieldset>
         </form>
-
 			</div>
-			<div class="card border-primary mb-3">
-	  		<div class="card-header">Sign-Up</div>
+			<div class="card border-primary mb-3 pic">
+	  		<div class="card-header titles">Sign-Up</div>
 				<form action = "signup.php" method ="post">
 				  <fieldset>
 				    <div class="form-group">
 				      <label for="exampleInputEmail1" class="form-label mt-4">Email address</label>
-				      <input type="email" class="form-control" name = "email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+				      <input type="email" class="form-control" name = "email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
 				      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 				    </div>
 					<div class="form-group">
@@ -81,11 +75,11 @@
 					</div>
 					<div class="form-group">
 						 <label for="signupFirstname" class="form-label mt-4">First_name</label>
-						 <input type="signupFirstname" class="form-control" name = "first_name" id="signupFirstname" placeholder="First_name">
+						 <input type="signupFirstname" class="form-control" name = "first_name" id="signupFirstname" placeholder="First Name">
 					</div>
 					<div class="form-group">
 						 <label for="signupLastname" class="form-label mt-4">Last_name</label>
-						 <input type="signupLastname" class="form-control" name = "last_name" id="signupLastname" placeholder="Last_name">
+						 <input type="signupLastname" class="form-control" name = "last_name" id="signupLastname" placeholder="Last Name">
 					</div>
 					<div class="form-group">
 						 <label for="signupPhone" class="form-label mt-4">Phone</label>

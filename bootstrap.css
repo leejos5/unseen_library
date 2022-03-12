@@ -11263,6 +11263,9 @@ input[type="range"] {
   justify-content: space-between;
 }
 
+.titles {
+  margin: 10px;
+}
 
 #search-body {
   padding: 5%;
