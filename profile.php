@@ -19,7 +19,7 @@ if (isset($_SESSION['user_id'])) {
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <img src="newnewlogo.png" alt="Unseen Library Logo" height = "100" width = "100"/>
+    <img src="img/newnewlogo.png" alt="Unseen Library Logo" height = "100" width = "100"/>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-
              controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -53,7 +53,7 @@ if (isset($_SESSION['user_id'])) {
 			<h1><?php echo $user_name ?></h1>
 			<hr />
 			<div id="profile">
-				<img src="portrait.png" class="m-xxl-4 pic" height=300px width=300px />
+				<img src="img/portrait.png" class="m-xxl-4 pic" height=300px width=300px />
 				<div class="m-xxl-4 desc pic">
 					<h3><?php echo $_SESSION['user_name'] ?></h3>
 					<h3><?php echo $user_age ?> Years Old</h3>

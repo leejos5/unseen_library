@@ -58,17 +58,17 @@
 		 <br />
 		 <div id="illustrations-container">
 			 <div class="cemtered">
-				<img class="about" src="library.png"  />
+				<img class="about" src="img/library.png"  />
 				<h4>Public Libraries</h4>
 			 </div>
 			 <img id="plus" src="plus.png" />
 			 <div>
-				<img class="about" src="bookstore.png" />
+				<img class="about" src="img/bookstore.png" />
 				<h4>Private Bookstores</h4>
 			 </div>
-			 <img id="equal" src="equal.png" />
+			 <img id="equal" src="img/equal.png" />
 			 <div>
-				<img class="about" src="newnewlogo.png" />
+				<img class="about" src="img/newnewlogo.png" />
 			 </div>
 		 </div>
 		</section>
