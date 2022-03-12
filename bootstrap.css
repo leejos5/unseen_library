@@ -11328,3 +11328,8 @@ input[type="range"] {
 .pic {
   margin: 30px;
 }
+
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+}

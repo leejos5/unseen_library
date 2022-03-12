@@ -99,7 +99,13 @@ session_start(); ?>
 				<!-- implement php to fill table -->
 					</table>
 					<input type="Submit" class="btn btn-primary" name="submit" value="Search/Set Comparison" />
-					<a href="compare.php" class="btn btn-success">Go!</a>
+					<a href="compare.php" class="btn btn-success
+					<?php
+						if (!isset($_SESSION['user_id'])) {
+							echo 'disabled';
+						}
+						?>
+					">Go!</a>
 				</form>
 			</section>
 		</div>

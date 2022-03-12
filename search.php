@@ -198,7 +198,7 @@ error_reporting(E_ERROR | E_PARSE);
 					</div>
 					<div>
 						<label for="customRange1" class="form-label">Minimum Rating</label>
-						<input type="range" min="1" max="10" class="form-range" id="ratingRange" name="minLocationRating" oninput="this.nextElementSibling.value = this.value">
+						<input type="range" min="1" max="5" class="form-range" id="ratingRange" name="minLocationRating" oninput="this.nextElementSibling.value = this.value">
 						<output name="rating"></output>
 						<button type="Submit" class="btn btn-success">Go!</button>
 					</div>
