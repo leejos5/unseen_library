@@ -140,11 +140,8 @@
                         </div>
                         
                         </div>
-         			</div>
-      <hr class="my-4">
-            <p class="lead">
-        <a class="btn btn-primary btn-lg" href="#" role="button">Thank You</a>
-      </p>
+         	</div>
+      
     </div>
 </body>
 </html>
