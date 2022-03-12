@@ -11324,3 +11324,7 @@ input[type="range"] {
     font-size: 0.75em;
     margin-top: 0.25em;
 }
+
+.pic {
+  margin: 30px;
+}
