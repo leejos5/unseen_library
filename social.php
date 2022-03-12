@@ -67,7 +67,7 @@ session_start(); ?>
             if (isset($_GET['search-user'])) { // is this how you access the input field?
               ?>
 				</form>
-				<form action="setOther.php" method="POST">
+				<form action="social-setOther.php" method="POST">
           <table class="table table-hover">
               <thead>
                   <tr class="table-success">

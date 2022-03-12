@@ -6,7 +6,9 @@
 
 <?php require_once('config.php');
 session_start();
-$user_id = $_SESSION['user_id'];
+if (isset($_SESSION['user_id'])) {
+	$user_id = $_SESSION['user_id'];
+}
 $title;
 $author;
 error_reporting(E_ERROR | E_PARSE);
@@ -20,7 +22,7 @@ error_reporting(E_ERROR | E_PARSE);
 	</head>
 	<body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <img src="newnewlogo.png" alt="Unseen Library Logo" height = "100" width = "100"/>
+    <img src="img/newnewlogo.png" alt="Unseen Library Logo" height = "100" width = "100"/>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-
              controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -139,9 +141,15 @@ error_reporting(E_ERROR | E_PARSE);
 									<td><?php echo $row['Address'] ?></td>
 									<td>placeholder</td>
 									<td>
-										<form method ="POST" action="addToList.php">
+										<form method ="POST" action="search-addToList.php">
 											<input type="hidden" name="book_id" value="<?php echo $row['Book_id']?>"/>
-											<input type="Submit" class="btn btn-dark" value="Add to List" />
+											<input type="Submit" class="btn btn-dark" value="Add to List"
+											<?php
+											if (!isset($_SESSION['user_id'])) {
+												echo ' disabled ';
+											}
+											?>
+											/>
 										</form>
 										</td>
 								</tr>
