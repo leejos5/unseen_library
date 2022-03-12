@@ -3,7 +3,7 @@ session_start();
 if (isset($_SESSION['user_id'])) {
 	$user_id = $_SESSION['user_id'];
 	$user_name = $_SESSION['user_fname'] . " " . $_SESSION['user_lname'];
-	$user_age = $_SESSION['user_age'];
+	$user_age = $_SESSION['user_age'];W1
 	$user_email = $_SESSION['user_email'];
 } else {
 	echo '<script>alert("You are not signed in.");location="login.php"</script>';
