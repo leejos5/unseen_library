@@ -9,7 +9,7 @@
 	</head>
 	<body style = "background-image: url('librarypro.png')">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    	<img src="newnewlogo.png" alt="Unseen Library Logo" height = "100" width = "100"/>
+    	<img src="img/newnewlogo.png" alt="Unseen Library Logo" height = "100" width = "100"/>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
@@ -43,9 +43,9 @@
                               Unseen Library applictaion gives an easy way of getting books for users from different location. Users can
                               choose any genre, read favorite book from a nearest bookstores or libraries. Create friendships to share your idea and rate
                               your best books and best authors of the year.  </p>
-                              
+
          		 	 <div class="image">
-         				<img class="about" src="Alice.jpg"/>
+         				<img class="about" src="img/Alice.jpg"/>
          				<div class="image__overlay">
          				    <div class ="image__price">Price=$56.49</div>
          				        <p class="image__description">
@@ -54,7 +54,7 @@
          				</div>
          			</div>
          			<div class="image">
-                         <img class="about" src="TTTH.jpg"/>
+                         <img class="about" src="img/TTTH.jpg"/>
                           <div class="image__overlay">
                            <div class="image__price">Price=$99.99</div>
                             <p class="image__description">
@@ -63,7 +63,7 @@
                        </div>
                        </div>
                        <div class="image">
-                           <img class="about" src="lastman.jpg"/>
+                           <img class="about" src="img/lastman.jpg"/>
                            <div class="image__overlay">
                            <div class ="image__price">Price=$78.30</div>
                             <p class="image__description">
@@ -72,16 +72,16 @@
                             </div>
                           </div>
                         <div class="image">
-                             <img class="about" src="Mastersofhorror.jpg"/>
+                             <img class="about" src="img/Mastersofhorror.jpg"/>
                              <div class="image__overlay">
                              <div class ="image__price">Price=$45.49</div>
                                  <p class="image__description">
-                                    Located in Walls Of Book      	  
+                                    Located in Walls Of Book
                              </p>
                        </div>
                      </div>
                      <div class="image">
-                          <img class="about" src="Rabbit.jpg"/>
+                          <img class="about" src="img/Rabbit.jpg"/>
                           <div class="image__overlay">
                           <div class ="image__price">Price=$85.56</div>
                            <p class="image__description">
@@ -91,7 +91,7 @@
                      </div>
 
          			<div class="image">
-                         <img class="about" src="storm.jpg"/>
+                         <img class="about" src="img/storm.jpg"/>
                          <div class="image__overlay">
                          <div class ="image__price">Price=$36.50</div>
                          <p class="image__description">
@@ -101,7 +101,7 @@
                        </div>
 
                       <div class="image">
-                           <img class="about" src="womaninwhite.jpg"/>
+                           <img class="about" src="img/womaninwhite.jpg"/>
                            <div class="image__overlay">
                            <div class ="image__price">Price=$50.99</div>
                            <p class="image__description">
@@ -111,7 +111,7 @@
                          </div>
 
                         <div class="image">
-                             <img class="about" src="Wuthering.jpg"/>
+                             <img class="about" src="img/Wuthering.jpg"/>
                              <div class="image__overlay">
                              <div class ="image__price">Price=$47.24</div>
                              <p class="image__description">
@@ -121,7 +121,7 @@
                             </div>
 
                          <div class="image">
-                              <img class="about" src="treasure.jpg"/>
+                              <img class="about" src="img/treasure.jpg"/>
                                <div class="image__overlay">
                                <div class ="image__price">Price=$49.99</div>
                                <p class="image__description">
@@ -131,14 +131,14 @@
 
                            </div>
                         <div class="image">
-                             <img class="about" src="Prisoner.jpg"/>
+                             <img class="about" src="img/Prisoner.jpg"/>
                              <div class="image__overlay">
                              <div class ="image__price">Price=$60.87</div>
                              <p class="image__description">
                                 Located in Built Environments Library
                              </p>
                         </div>
-                        
+
                         </div>
          			</div>
       <hr class="my-4">
