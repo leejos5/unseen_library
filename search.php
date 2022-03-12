@@ -34,7 +34,13 @@ error_reporting(E_ERROR | E_PARSE);
           <a class="nav-link" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="login.php">Sign In</a>
+					<?php
+						if (isset($_SESSION['user_name'])) {
+							echo '<a class="nav-link" href="logout.php">Log Out</a>';
+						} else {
+							echo '<a class="nav-link" href="login.php">Sign In</a>';
+						}
+					?>
         </li>
 				<li class="nav-item">
           <a class="nav-link" href="profile.php">Profile</a>

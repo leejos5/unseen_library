@@ -1,4 +1,6 @@
-<?php require_once('config.php'); ?>
+<?php require_once('config.php');
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -8,7 +10,7 @@
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <img src="newnewlogo.png" alt="Unseen Library Logo" height = "100" width = "100"/>
+    <img src="img/newnewlogo.png" alt="Unseen Library Logo" height = "100" width = "100"/>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-
              controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -19,7 +21,13 @@
           	<a class="nav-link" href="index.php">Home</a>
         	</li>
         	<li class="nav-item">
-          	<a class="nav-link" href="login.php">Sign In</a>
+						<?php
+							if (isset($_SESSION['user_name'])) {
+								echo '<a class="nav-link" href="logout.php">Log Out</a>';
+							} else {
+								echo '<a class="nav-link" href="login.php">Sign In</a>';
+							}
+						?>
         	</li>
 					<li class="nav-item">
 						<a class="nav-link" href="profile.php">Profile</a>

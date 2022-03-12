@@ -4,7 +4,6 @@ if (isset($_SESSION['user_id'])) {
 	$user_id = $_SESSION['user_id'];
 	$user_name = $_SESSION['user_fname'] . " " . $_SESSION['user_lname'];
 	$user_age = $_SESSION['user_age'];
-	$user_bd = $_SESSION['user_bd'];
 	$user_email = $_SESSION['user_email'];
 } else {
 	echo '<script>alert("You are not signed in.");location="login.php"</script>';
@@ -30,7 +29,13 @@ if (isset($_SESSION['user_id'])) {
           	<a class="nav-link" href="index.php">Home</a>
         	</li>
         	<li class="nav-item">
-          	<a class="nav-link" href="login.php">Sign In</a>
+						<?php
+							if (isset($_SESSION['user_name'])) {
+								echo '<a class="nav-link" href="logout.php">Log Out</a>';
+							} else {
+								echo '<a class="nav-link" href="login.php">Sign In</a>';
+							}
+						?>
         	</li>
 					<li class="nav-item">
 						<a class="nav-link" href="profile.php">Profile
@@ -57,7 +62,6 @@ if (isset($_SESSION['user_id'])) {
 				<div class="m-xxl-4 desc pic">
 					<h3><?php echo $_SESSION['user_name'] ?></h3>
 					<h3><?php echo $user_age ?> Years Old</h3>
-					<h3><?php echo $user_bd ?></h3>
 					<h3><?php echo $user_email ?></h3>
 				</div>
 			</div>
