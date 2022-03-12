@@ -11268,3 +11268,60 @@ input[type="range"] {
   padding: 5%;
   padding-top: 0;
 }
+.image {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    float:left;
+}
+
+.image__img {
+    display: block;
+    width: 100%;
+    display: flex;
+    vertical-align: middle;
+    justify-content: center;
+}
+
+.image__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.image__overlay > * {
+    transform: translateY(20px);
+    transition: transform 0.25s;
+}
+
+.image__overlay:hover {
+    opacity: 1;
+}
+
+.image__overlay:hover > * {
+    transform: translateY(0);
+}
+
+.image__price {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.image__description {
+    font-size: 0.75em;
+    margin-top: 0.25em;
+}
+
