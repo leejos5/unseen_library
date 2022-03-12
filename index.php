@@ -45,8 +45,10 @@ session_start();
       </ul>
       </div>
 </nav>
-		 <div class="jumbotron">
-               <h4 class="display-4">Welcome to Unseen Library</h4>
+        <section id="about-header">
+		 <div>
+               <h1>Welcome to Unseen Library</h1>
+               <hr />
                <p class="lead">
                               Unseen Library applictaion gives an easy way of getting books for users from different location. Users can
                               choose any genre, read favorite book from a nearest bookstores or libraries. Create friendships to share your idea and rate
@@ -146,10 +148,9 @@ session_start();
                                 Located in Built Environments Library
                              </p>
                         </div>
-
-                        </div>
-         	</div>
-
-    </div>
-</body>
+                    </div>
+         	    </div>
+            </div>
+        </section>
+    </body>
 </html>
