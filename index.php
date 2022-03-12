@@ -76,7 +76,7 @@
                              <div class="image__overlay">
                              <div class ="image__price">Price=$45.49</div>
                                  <p class="image__description">
-                                    Located in Walls Of Book                                                                     				            Located in Three tree books
+                                    Located in Walls Of Book      	  
                              </p>
                        </div>
                      </div>
