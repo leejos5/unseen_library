@@ -38,27 +38,108 @@
       </div>
 </nav>
 		 <div class="jumbotron">
-               <h1 class="display-4">Welcome to Unseen Library</h1>
-
-         		  		<br />
-
-         		 	 <div class="illustrations-container">
+               <h4 class="display-4">Welcome to Unseen Library</h4>
+               <p class="lead">
+                              Unseen Library applictaion gives an easy way of getting books for users from different location. Users can
+                              choose any genre, read favorite book from a nearest bookstores or libraries. Create friendships to share your idea and rate
+                              your best books and best authors of the year.  </p>
+                              
+         		 	 <div class="image">
          				<img class="about" src="Alice.jpg"/>
-         				<img class="about" src="TTTH.jpg" />
-         				<img class="about" src="lastman.jpg"  />
-         				<img class="about"src=
-         					"Mastersofhorror.jpg"/>
-         				<img class="about" src="Rabbit.jpg"  />
+         				<div class="image__overlay">
+         				    <div class ="image__price">Price=$56.49</div>
+         				        <p class="image__description">
+         				            Located in Three tree books
+         				        </p>
+         				</div>
          			</div>
+         			<div class="image">
+                         <img class="about" src="TTTH.jpg"/>
+                          <div class="image__overlay">
+                           <div class="image__price">Price=$99.99</div>
+                            <p class="image__description">
+                              Located in Washington Library
+                             </p>
+                       </div>
+                       </div>
+                       <div class="image">
+                           <img class="about" src="lastman.jpg"/>
+                           <div class="image__overlay">
+                           <div class ="image__price">Price=$78.30</div>
+                            <p class="image__description">
+                               Located in American Library Association
+                             </p>
+                            </div>
+                          </div>
+                        <div class="image">
+                             <img class="about" src="Mastersofhorror.jpg"/>
+                             <div class="image__overlay">
+                             <div class ="image__price">Price=$45.49</div>
+                                 <p class="image__description">
+                                    Located in Walls Of Book                                                                     				            Located in Three tree books
+                             </p>
+                       </div>
+                     </div>
+                     <div class="image">
+                          <img class="about" src="Rabbit.jpg"/>
+                          <div class="image__overlay">
+                          <div class ="image__price">Price=$85.56</div>
+                           <p class="image__description">
+                              Located in Phantom Zone Comics Southcenter
+                           </p>
+                          </div>
+                     </div>
 
-               <p class="lead">Choose any genre you like, read your favorite book from your favorite bookstores or libraries.
-               Create friendships to readers like you, rate your best books and best authors of the year. </p>
-         			<div class="illustrations-container">
-         				<img class="about" src="storm.jpg"  />
-         				<img class="about" src="womaninwhite.jpg"/>
-         				<img class="about" src="Wuthering.jpg"  />
-         				<img class="about" src="treasure.jpg"  />
-         				<img class="about" src="Prisoner.jpg"  />
+         			<div class="image">
+                         <img class="about" src="storm.jpg"/>
+                         <div class="image__overlay">
+                         <div class ="image__price">Price=$36.50</div>
+                         <p class="image__description">
+                             Located in Health Sciences Library
+                          </p>
+                        </div>
+                       </div>
+
+                      <div class="image">
+                           <img class="about" src="womaninwhite.jpg"/>
+                           <div class="image__overlay">
+                           <div class ="image__price">Price=$50.99</div>
+                           <p class="image__description">
+                              Located in Suzzallo and Allen Libraries
+                           </p>
+                          </div>
+                         </div>
+
+                        <div class="image">
+                             <img class="about" src="Wuthering.jpg"/>
+                             <div class="image__overlay">
+                             <div class ="image__price">Price=$47.24</div>
+                             <p class="image__description">
+                                 Located in Paper Boat Booksellers
+                              </p>
+                             </div>
+                            </div>
+
+                         <div class="image">
+                              <img class="about" src="treasure.jpg"/>
+                               <div class="image__overlay">
+                               <div class ="image__price">Price=$49.99</div>
+                               <p class="image__description">
+                                   Located in University of Washington Tacoma
+                               </p>
+                              </div>
+
+                           </div>
+                        <div class="image">
+                             <img class="about" src="Prisoner.jpg"/>
+                             <div class="image__overlay">
+                             <div class ="image__price">Price=$60.87</div>
+                             <p class="image__description">
+                                Located in Built Environments Library
+                             </p>
+                        </div>
+                        
+                        </div>
          			</div>
       <hr class="my-4">
             <p class="lead">
