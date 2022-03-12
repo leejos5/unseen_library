@@ -11268,12 +11268,6 @@ input[type="range"] {
   padding: 5%;
   padding-top: 0;
 }
-<<<<<<< HEAD
-
-.pic {
-  margin: 30px;
-}
-=======
 .image {
     position: relative;
     height: 200px;
@@ -11330,5 +11324,3 @@ input[type="range"] {
     font-size: 0.75em;
     margin-top: 0.25em;
 }
-
->>>>>>> caaa116a59c0df158c7b1a844c04171434179222
