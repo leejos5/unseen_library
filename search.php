@@ -101,15 +101,14 @@ error_reporting(E_ERROR | E_PARSE);
 						<?php
 						$title = $_GET['search-name'];
 						$author = $_GET['search-author'];
-						$zipcode = intval($_GET['search-zipcode']);
-						var_dump($zipcode);
+						$zipcode =$_GET['search-zipcode'];
 						?>
 	        </div>
 					<br />
 					<div>
 						<label for="customRange1" class="form-label">Minimum Rating</label>
-						<input type="range" min="1" max="5" class="form-range" id="ratingRange" name = "minBookRating" oninput="this.nextElementSibling.value = this.value">
-						<output name="rating"></output>
+						<input type="range" min="1" max="5" value="1" class="form-range" id="ratingRange" name = "minBookRating" oninput="this.nextElementSibling.value = this.value">
+						<output name="rating">1</output>
 						<button type="Submit" class="btn btn-success">Go!</button>
 					</div>
 					<br />
