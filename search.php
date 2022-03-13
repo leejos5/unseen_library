@@ -77,7 +77,7 @@ error_reporting(E_ERROR | E_PARSE);
 				<form method="GET" action="search.php">
 					<br />
 	        <div>
-	          <input type="text" id="title" name="search-name" placeholder="Search for a title..."/>
+	          <input type="text" id="title" name="search-name" placeholder="Book Title"/>
 	          <input type="text" id="author" name="search-author" placeholder="Author Name" />
 						<select name = "genre">
 							<option value = "" >Select a Genre</option>
@@ -97,15 +97,18 @@ error_reporting(E_ERROR | E_PARSE);
 							}
 							?>
 						</select>
+						<input type="text" id="zipcode" name="search-zipcode" placeholder="Zipcode" />
 						<?php
 						$title = $_GET['search-name'];
 						$author = $_GET['search-author'];
+						$zipcode = intval($_GET['search-zipcode']);
+						var_dump($zipcode);
 						?>
 	        </div>
 					<br />
 					<div>
 						<label for="customRange1" class="form-label">Minimum Rating</label>
-						<input type="range" min="1" max="10" class="form-range" id="ratingRange" oninput="this.nextElementSibling.value = this.value">
+						<input type="range" min="1" max="5" class="form-range" id="ratingRange" name = "minBookRating" oninput="this.nextElementSibling.value = this.value">
 						<output name="rating"></output>
 						<button type="Submit" class="btn btn-success">Go!</button>
 					</div>
@@ -131,12 +134,13 @@ error_reporting(E_ERROR | E_PARSE);
 						if (mysqli_connect_errno()) {
 							die(mysqli_connect_error());
 						}
+						$minRating = intval($_GET['minBookRating']);
 						$sql =
-						"SELECT r.Book_id, Title, Genre, First_name, Last_name, Isbn, Year, Publisher, Address, avg FROM (SELECT book_id, AVG(Rating)
-						 as avg FROM book_ratings GROUP BY Book_id) r JOIN (SELECT Book_id, Title, Genre, First_name, Last_name, Isbn, Year, Publisher, Address
+						"SELECT r.Book_id, Title, Genre, First_name, Last_name, Isbn, Year, Publisher, Address, City, State, Zipcode, avg FROM (SELECT book_id, AVG(Rating)
+						 as avg FROM book_ratings GROUP BY Book_id) r JOIN (SELECT Book_id, Title, Genre, First_name, Last_name, Isbn, Year, Publisher, Address, City, State, Zipcode
 										FROM Locations l JOIN (SELECT Book_id, Title, Genre, First_name, Last_name, Isbn, Year, Publisher, Location_id FROM Books b JOIN
 										Authors a ON b.author_id = a.author_id) c ON l.location_id = c.location_id WHERE Title LIKE '%{$title}%' AND Last_name LIKE '%{$author}%'
-										AND Genre LIKE '%{$_GET['genre']}%') b ON b.Book_id = r.book_id";
+										AND Genre LIKE '%{$_GET['genre']}%' AND Zipcode LIKE '%{$zipcode}%') b ON b.Book_id = r.book_id WHERE avg >= {$minRating}";
 						if ($result = mysqli_query($connection, $sql)) {
 							while($row = mysqli_fetch_assoc($result)) {
 								?>
@@ -147,8 +151,8 @@ error_reporting(E_ERROR | E_PARSE);
 									<td><?php echo $row['Isbn'] ?></td>
 									<td><?php echo $row['Year'] ?></td>
 									<td><?php echo $row['Publisher'] ?></td>
-									<td><?php echo $row['Address'] ?></td>
-									<td>placeholder</td>
+									<td><?php echo $row['Address'] . ", " . $row['City'] . ", " . $row['State'] . " " . $row['Zipcode'] ?></td>
+									<td><?php echo $row['avg']?></td>
 									<td>
 										<form method ="POST" action="helper/addToList.php">
 											<input type="hidden" name="book_id" value="<?php echo $row['Book_id']?>"/>
