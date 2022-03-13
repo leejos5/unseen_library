@@ -2,7 +2,7 @@
 session_start();
 $other = $_POST["username"];
 $_SESSION['otherUser'] = $other;
-header("Location: social.php");
+header("Location: /unseen_library/social.php");
 exit;
 
 ?>

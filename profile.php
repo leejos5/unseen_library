@@ -3,10 +3,10 @@ session_start();
 if (isset($_SESSION['user_id'])) {
 	$user_id = $_SESSION['user_id'];
 	$user_name = $_SESSION['user_fname'] . " " . $_SESSION['user_lname'];
-	$user_age = $_SESSION['user_age'];W1
+	$user_age = $_SESSION['user_age'];
 	$user_email = $_SESSION['user_email'];
 } else {
-	echo '<script>alert("You are not signed in.");location="login.php"</script>';
+	echo '<script>alert("You are not signed in.");location="authentication/login.php"</script>';
 }
 ?>
 <!DOCTYPE html>
@@ -31,9 +31,9 @@ if (isset($_SESSION['user_id'])) {
         	<li class="nav-item">
 						<?php
 							if (isset($_SESSION['user_name'])) {
-								echo '<a class="nav-link" href="logout.php">Log Out</a>';
+								echo '<a class="nav-link" href="authentication/logout.php">Log Out</a>';
 							} else {
-								echo '<a class="nav-link" href="login.php">Sign In</a>';
+								echo '<a class="nav-link" href="authentication/login.php">Sign In</a>';
 							}
 						?>
         	</li>

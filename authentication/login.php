@@ -1,16 +1,17 @@
-<?php require_once('config.php');
+<?php
 session_start();
+require_once($_SESSION['wd'] . '/config.php');
  ?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
 		<title>Login</title>
-		<link rel="stylesheet" href="bootstrap.css">
+		<link rel="stylesheet" href="/unseen_library/bootstrap.css">
 	</head>
 	<body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <img src="img/newnewlogo.png" alt="Unseen Library Logo" height = "100" width = "100"/>
+    <img src="/unseen_library/img/newnewlogo.png" alt="Unseen Library Logo" height = "100" width = "100"/>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-
              controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -18,7 +19,7 @@ session_start();
     <div class="collapse navbar-collapse" id="navbarColor02">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="index.php">Home</a>
+          <a class="nav-link" href="/unseen_library/index.php">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="login.php">Sign In
@@ -26,16 +27,16 @@ session_start();
 					</a>
         </li>
 				<li class="nav-item">
-					<a class="nav-link" href="profile.php">Profile</a>
+					<a class="nav-link" href="/unseen_library/profile.php">Profile</a>
 				</li>
         <li class="nav-item">
-          <a class="nav-link" href="search.php">Search</a>
+          <a class="nav-link" href="/unseen_library/search.php">Search</a>
         </li>
 				<li class="nav-item">
-					<a class="nav-link" href="social.php">Social</a>
+					<a class="nav-link" href="/unseen_library/social.php">Social</a>
 				</li>
 				<li class="nav-about">
-					<a class="nav-link" href="about.php">About</a>
+					<a class="nav-link" href="/unseen_library/about.php">About</a>
 				</li>
       </ul>
     </div>

@@ -36,9 +36,9 @@ error_reporting(E_ERROR | E_PARSE);
         <li class="nav-item">
 					<?php
 						if (isset($_SESSION['user_name'])) {
-							echo '<a class="nav-link" href="logout.php">Log Out</a>';
+							echo '<a class="nav-link" href="authentication/logout.php">Log Out</a>';
 						} else {
-							echo '<a class="nav-link" href="login.php">Sign In</a>';
+							echo '<a class="nav-link" href="authentication/login.php">Sign In</a>';
 						}
 					?>
         </li>
@@ -147,7 +147,7 @@ error_reporting(E_ERROR | E_PARSE);
 									<td><?php echo $row['Address'] ?></td>
 									<td>placeholder</td>
 									<td>
-										<form method ="POST" action="search-addToList.php">
+										<form method ="POST" action="helper/addToList.php">
 											<input type="hidden" name="book_id" value="<?php echo $row['Book_id']?>"/>
 											<input type="Submit" class="btn btn-dark" value="Add to List"
 											<?php

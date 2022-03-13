@@ -1,16 +1,18 @@
-<?php require_once('config.php');
+<?php
 session_start();
-$username = $_SESSION['otherUser']; ?>
+require_once($_SESSION['wd'] . '/config.php');
+$username = $_SESSION['otherUser'];
+?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
 		<title>Search</title>
-		<link rel="stylesheet" href="bootstrap.css">
+		<link rel="stylesheet" href="/unseen_library/bootstrap.css">
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <img src="newnewlogo.png" alt="Unseen Library Logo" height = "100" width = "100"/>
+    <img src="/unseen_library/img/newnewlogo.png" alt="Unseen Library Logo" height = "100" width = "100"/>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-
              controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -18,24 +20,24 @@ $username = $_SESSION['otherUser']; ?>
     	<div class="collapse navbar-collapse" id="navbarColor02">
       	<ul class="navbar-nav mr-auto">
         	<li class="nav-item active">
-          	<a class="nav-link" href="index.php">Home</a>
+          	<a class="nav-link" href="/unseen_library/index.php">Home</a>
         	</li>
         	<li class="nav-item">
-          	<a class="nav-link" href="login.php">Sign In</a>
+          	<a class="nav-link" href="/unseen_library/logout.php">Log Out</a>
         	</li>
 					<li class="nav-item">
-						<a class="nav-link" href="profile.php">Profile</a>
+						<a class="nav-link" href="/unseen_library/profile.php">Profile</a>
 					</li>
         	<li class="nav-item">
-          	<a class="nav-link" href="search.php">Search</a>
+          	<a class="nav-link" href="/unseen_library/search.php">Search</a>
         	</li>
 					<li class="nav-item">
-						<a class="nav-link" href="social.php">Social
+						<a class="nav-link" href="/unseen_library/social.php">Social
               <span class="sr-only">(current)</span>
             </a>
 					</li>
 					<li class="nav-about">
-						<a class="nav-link" href="about.php">About</a>
+						<a class="nav-link" href="/unseen_library/about.php">About</a>
 					</li>
       	</ul>
     	</div>
@@ -45,13 +47,13 @@ $username = $_SESSION['otherUser']; ?>
 			<hr />
       <div id="profileContainer">
         <div id="profile">
-  				<img src="portrait.png" class="m-xxl-4 pic" height=300px width=300px />
+  				<img src="/unseen_library/img/portrait.png" class="m-xxl-4 pic" height=300px width=300px />
   				<div class="m-xxl-4 desc pic">
   					<h3><?php echo $_SESSION['user_name'] ?></h3>
   				</div>
         </div>
         <div id="profile">
-  				<img src="portrait.png" class="m-xxl-4 pic" height=300px width=300px />
+  				<img src="/unseen_library/img/portrait.png" class="m-xxl-4 pic" height=300px width=300px />
   				<div class="m-xxl-4 desc pic">
   					<h3><?php echo $username?></h3>
   				</div>

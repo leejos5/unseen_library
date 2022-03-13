@@ -23,9 +23,9 @@ session_start(); ?>
         <li class="nav-item">
 					<?php
 						if (isset($_SESSION['user_name'])) {
-							echo '<a class="nav-link" href="logout.php">Log Out</a>';
+							echo '<a class="nav-link" href="authentication/logout.php">Log Out</a>';
 						} else {
-							echo '<a class="nav-link" href="login.php">Sign In</a>';
+							echo '<a class="nav-link" href="authentication/login.php">Sign In</a>';
 						}
 					?>
         </li>
@@ -73,7 +73,7 @@ session_start(); ?>
             if (isset($_GET['search-user'])) { // is this how you access the input field?
               ?>
 				</form>
-				<form action="social-setOther.php" method="POST">
+				<form action="helper/setOther.php" method="POST">
           <table class="table table-hover">
               <thead>
                   <tr class="table-success">
@@ -105,7 +105,7 @@ session_start(); ?>
 				<!-- implement php to fill table -->
 					</table>
 					<input type="Submit" class="btn btn-primary" name="submit" value="Search/Set Comparison" />
-					<a href="compare.php" class="btn btn-success
+					<a href="helper/compare.php" class="btn btn-success
 					<?php
 						if (!isset($_SESSION['user_id'])) {
 							echo 'disabled';

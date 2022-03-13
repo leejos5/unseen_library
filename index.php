@@ -1,5 +1,6 @@
 <?php require_once('config.php');
 session_start();
+$_SESSION['wd'] = getcwd();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,9 +24,9 @@ session_start();
 						<li class="nav-item">
 							<?php
 								if (isset($_SESSION['user_name'])) {
-									echo '<a class="nav-link" href="logout.php">Log Out</a>';
+									echo '<a class="nav-link" href="authentication/logout.php">Log Out</a>';
 								} else {
-									echo '<a class="nav-link" href="login.php">Sign In</a>';
+									echo '<a class="nav-link" href="authentication/login.php">Sign In</a>';
 								}
 							?>
 						</li>

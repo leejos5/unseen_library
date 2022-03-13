@@ -23,9 +23,9 @@ session_start();
         	<li class="nav-item">
 						<?php
 							if (isset($_SESSION['user_name'])) {
-								echo '<a class="nav-link" href="logout.php">Log Out</a>';
+								echo '<a class="nav-link" href="authentication/logout.php">Log Out</a>';
 							} else {
-								echo '<a class="nav-link" href="login.php">Sign In</a>';
+								echo '<a class="nav-link" href="authentication/login.php">Sign In</a>';
 							}
 						?>
         	</li>
@@ -69,7 +69,7 @@ session_start();
 				<img class="about" src="img/library.png"  />
 				<h4>Public Libraries</h4>
 			 </div>
-			 <img id="plus" src="plus.png" />
+			 <img id="plus" src="img/plus.png" />
 			 <div>
 				<img class="about" src="img/bookstore.png" />
 				<h4>Private Bookstores</h4>

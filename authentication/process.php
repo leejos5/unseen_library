@@ -42,7 +42,7 @@
     $_SESSION['user_lname'] = $row['last_name'];
     $_SESSION['user_phone'] = $row['phone'];
     $_SESSION['user_age'] = $row['age'];
-    echo '<script>alert("Login successful!");location="index.php"</script>';
+    echo '<script>alert("Login successful!");location="/unseen_library/index.php"</script>';
     //die();
     $connect->close();
 

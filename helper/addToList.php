@@ -1,6 +1,6 @@
 <?php
-require_once('config.php');
 session_start();
+require_once($_SESSION['wd'] . '/config.php');
 $list_id = $_SESSION['curr_list'];
 $book_id = $_POST['book_id'];
 $connection = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
@@ -16,14 +16,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $sql = "INSERT INTO Reading_List_Entries (List_id, Book_id) VALUES
       (${list_id}, ${book_id})";
       $result = mysqli_query($connection, $sql);
-      echo '<script>alert("Succesfully added to the reading list.");location="search.php";</script>';
+      echo '<script>alert("Succesfully added to the reading list.");location="/unseen_library/search.php";</script>';
       unset($_SESSION['curr_list']);
     } else {
-      echo '<script>alert("The book is already in the list!");location="search.php";</script>';
+      echo '<script>alert("The book is already in the list!");location="/unseen_library/search.php";</script>';
       unset($_SESSION['curr_list']);
     }
   } else {
-    echo '<script>alert("Please select a reading list.");location="search.php";</script>';
+    echo '<script>alert("Please select a reading list.");location="/unseen_library/search.php";</script>';
   }
 }
 ?>
