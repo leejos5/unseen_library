@@ -52,7 +52,7 @@ $_SESSION['wd'] = getcwd();
                <hr />
                <p class="lead">
                               Unseen Library applictaion gives an easy way of getting books for users from different location. Users can
-                              choose any genre, read favorite book from a nearest bookstores or libraries. Create friendships to share your idea and rate
+                              choose any genre, read a book from a nearest bookstores or libraries. Share your idea and rate
                               your best books and best authors of the year.  </p>
 
          		 	 <div class="image">
