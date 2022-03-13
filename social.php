@@ -1,3 +1,13 @@
+<!--
+Name: Joshua lee
+Date: March 13, 2022
+Section: TCSS 445 A
+
+social.php allows users to search and select a different user in the database
+and compare reading lists with them to see if they have any matching books in the
+specified reading lists.
+-->
+
 <?php require_once('config.php');
 session_start(); ?>
 <!DOCTYPE html>

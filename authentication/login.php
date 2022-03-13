@@ -1,3 +1,13 @@
+<!--
+Name: Joshua lee, Rin Pham
+Date: March 13, 2022
+Section: TCSS 445 A
+
+Login.php prompts the user to either log into an existing account or create a
+new account. Forms are appropriately handled with the database to ensure users
+can only create unique accounts and user information is secure.
+-->
+
 <?php
 session_start();
 require_once($_SESSION['wd'] . '/config.php');

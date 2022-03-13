@@ -1,3 +1,10 @@
+<!--
+Name: Rin Pham
+Date: March 13, 2022
+Section: TCSS 445 A
+
+connect.php helps establish a database connection to the Unseen_Library database .
+-->
 <?php
 $servername = "localhost";
 $username = "testuser";

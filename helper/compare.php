@@ -1,3 +1,13 @@
+<!--
+Name: Joshua lee
+Date: March 13, 2022
+Section: TCSS 445 A
+
+Compare.php compares the reading lists of two different users to determine which
+books the two users have in common and display that to the user. An empty table
+will be displayed if the users do not have any books in common in their selected
+reading lists.
+-->
 <?php
 session_start();
 require_once($_SESSION['wd'] . '/config.php');

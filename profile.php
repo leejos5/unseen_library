@@ -1,3 +1,12 @@
+<!--
+Name: Joshua lee
+Date: March 13, 2022
+Section: TCSS 445 A
+
+Profile.php displays the user's account information and allows them to create
+and view their reading lists.
+-->
+
 <?php require_once('config.php');
 session_start();
 if (isset($_SESSION['user_id'])) {
@@ -128,6 +137,10 @@ if (isset($_SESSION['user_id'])) {
 				}
 				?>
 				</table>
+			</form>
+			<form method="POST" action="helper/createNewList.php" class="ra">
+				<input type="text" required placeholder="New List Name" name="list-name" />
+				<button type="submit" class="btn btn-success">Create New Reading List!</button>
 			</form>
 		</section>
 	</body>

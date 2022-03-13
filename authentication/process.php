@@ -1,3 +1,13 @@
+<!--
+Name: Rin Pham, Joshua Lee
+Date: March 13, 2022
+Section: TCSS 445 A
+
+process.php is used to handle form validation for a user attempting to log-in.
+It checks the users input against the existing user values in the database and
+starts a session if their login succeeds.
+-->
+
 <?php
     session_start();
     header('Content-Type: text/html; charset=utf8mb4');

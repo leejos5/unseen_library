@@ -1,3 +1,12 @@
+<!--
+Name: Joshua lee, Lidiya Abose
+Date: March 13, 2022
+Section: TCSS 445 A
+
+Index.php is the home page for the Unseen Library application that displays a
+select number of books and welcomes the user to the website.
+-->
+
 <?php require_once('config.php');
 session_start();
 $_SESSION['wd'] = getcwd();

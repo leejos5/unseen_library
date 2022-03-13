@@ -1,7 +1,10 @@
-<!-- To do:
-- Implement all of the search filtering
-	- Fix the minimum rating for books search
-	- location rating should leave an avg rating, not just from one
+<!--
+Name: Joshua lee
+Date: March 13, 2022
+Section: TCSS 445 A
+
+Search.php allows the user to search and filter for locations and books present
+in the database and add any desired books to the specified reading list.
 -->
 
 <?php require_once('config.php');

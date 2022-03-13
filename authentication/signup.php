@@ -1,3 +1,12 @@
+<!--
+Name: Rin Pham, Joshua Lee
+Date: March 13, 2022
+Section: TCSS 445 A
+
+Signup.php handles a user's form to create a new user account in the database.
+It ensures that only an account with a unique username can be created.
+-->
+
 <?php
 $servername = "localhost";
 $username = "testuser";

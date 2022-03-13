@@ -1,3 +1,12 @@
+<!--
+Name: Joshua lee
+Date: March 13, 2022
+Section: TCSS 445 A
+
+addToList.php is a helper function that will add a selected book from the search
+results to the selected list. It checks to make sure duplicate books are not added.
+-->
+
 <?php
 session_start();
 require_once($_SESSION['wd'] . '/config.php');

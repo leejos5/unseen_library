@@ -1,3 +1,13 @@
+<!--
+Name: Joshua lee
+Date: March 13, 2022
+Section: TCSS 445 A
+
+About.php serves as a description and information page for the Unseen library
+application. It includes information on the program itself, motivation, goal,
+ disclosure, and the team.
+-->
+
 <?php require_once('config.php');
 session_start();
 ?>
@@ -5,7 +15,7 @@ session_start();
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Search</title>
+		<title>About</title>
 		<link rel="stylesheet" href="bootstrap.css">
 	</head>
 	<body>
