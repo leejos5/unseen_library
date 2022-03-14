@@ -130,6 +130,7 @@ error_reporting(E_ERROR | E_PARSE);
 										<th scope="col">Location</th>
 										<th scope="col">Rating</th>
 										<th scope="col">Add to List</th>
+										<th scope="col">Reviews</th>
 								</tr>
 						</thead>
 						<?php
@@ -175,7 +176,19 @@ error_reporting(E_ERROR | E_PARSE);
 											?>
 											/>
 										</form>
-										</td>
+									</td>
+									<td>
+										<form method="POST" action="helper/seeReview.php">
+											<input type="hidden" name="bookid" value="<?php echo$row ['book_id']?>"/>
+											<input type="hidden" name="booktitle" value="<?php echo $row['Title']?>"/>
+											<input type="Submit" class="btn btn-dark" value="See Reviews"
+											<?php
+												if (!isset($_SESSION['user_id'])) {
+													echo ' disabled ';
+												}
+												?>/>
+										</form>
+									</td>
 								</tr>
 								<?php
 							}
