@@ -67,16 +67,14 @@ $_SESSION['wd'] = getcwd();
          		 	 <div class="image">
          				<img class="about" src="img/Alice.jpg"/>
          				<div class="image__overlay">
-         				    <div class ="image__price">Price=$56.49</div>
-         				        <p class="image__description">
-         				            Located in Three tree books
+         				     <p class="image__description">
+         				         Located in Three tree books
          				        </p>
          				</div>
          			</div>
          			<div class="image">
                          <img class="about" src="img/TTTH.jpg"/>
                           <div class="image__overlay">
-                           <div class="image__price">Price=$99.99</div>
                             <p class="image__description">
                               Located in Washington Library
                              </p>
@@ -85,7 +83,6 @@ $_SESSION['wd'] = getcwd();
                        <div class="image">
                            <img class="about" src="img/lastman.jpg"/>
                            <div class="image__overlay">
-                           <div class ="image__price">Price=$78.30</div>
                             <p class="image__description">
                                Located in American Library Association
                              </p>
@@ -94,7 +91,6 @@ $_SESSION['wd'] = getcwd();
                         <div class="image">
                              <img class="about" src="img/Mastersofhorror.jpg"/>
                              <div class="image__overlay">
-                             <div class ="image__price">Price=$45.49</div>
                                  <p class="image__description">
                                     Located in Walls Of Book
                              </p>
@@ -103,7 +99,6 @@ $_SESSION['wd'] = getcwd();
                      <div class="image">
                           <img class="about" src="img/Rabbit.jpg"/>
                           <div class="image__overlay">
-                          <div class ="image__price">Price=$85.56</div>
                            <p class="image__description">
                               Located in Phantom Zone Comics Southcenter
                            </p>
@@ -113,7 +108,6 @@ $_SESSION['wd'] = getcwd();
          			<div class="image">
                          <img class="about" src="img/storm.jpg"/>
                          <div class="image__overlay">
-                         <div class ="image__price">Price=$36.50</div>
                          <p class="image__description">
                              Located in Health Sciences Library
                           </p>
@@ -123,7 +117,6 @@ $_SESSION['wd'] = getcwd();
                       <div class="image">
                            <img class="about" src="img/womaninwhite.jpg"/>
                            <div class="image__overlay">
-                           <div class ="image__price">Price=$50.99</div>
                            <p class="image__description">
                               Located in Suzzallo and Allen Libraries
                            </p>
@@ -133,7 +126,6 @@ $_SESSION['wd'] = getcwd();
                         <div class="image">
                              <img class="about" src="img/Wuthering.jpg"/>
                              <div class="image__overlay">
-                             <div class ="image__price">Price=$47.24</div>
                              <p class="image__description">
                                  Located in Paper Boat Booksellers
                               </p>
@@ -143,7 +135,6 @@ $_SESSION['wd'] = getcwd();
                          <div class="image">
                               <img class="about" src="img/treasure.jpg"/>
                                <div class="image__overlay">
-                               <div class ="image__price">Price=$49.99</div>
                                <p class="image__description">
                                    Located in University of Washington Tacoma
                                </p>
@@ -153,13 +144,12 @@ $_SESSION['wd'] = getcwd();
                         <div class="image">
                              <img class="about" src="img/Prisoner.jpg"/>
                              <div class="image__overlay">
-                             <div class ="image__price">Price=$60.87</div>
                              <p class="image__description">
                                 Located in Built Environments Library
                              </p>
                         </div>
                     </div>
-         	    </div>
+         	  </div>
             </div>
         </section>
     </body>
