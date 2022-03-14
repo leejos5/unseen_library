@@ -86,7 +86,10 @@ if (isset($_SESSION['user_id'])) {
 					if (mysqli_connect_errno()) {
 						die(mysqli_connect_error());
 					}
-					$sql= "SELECT List_id, Name FROM READING_LISTS WHERE User_id = '${user_id}'"; // Have user_id = user id from session!!!
+					$sql= "SELECT List_id, Name FROM READING_LISTS WHERE User_id = '${user_id}'";
+					# Selects the list id and name of the reading lists that with the given user id.
+					# Used to retrieve and display the user's current reading lists.
+
 					if ($result = mysqli_query($connection, $sql)) {
 						while ($row = mysqli_fetch_assoc($result)) {
 							echo '<option value="' . $row['List_id'] . '">';
@@ -119,6 +122,10 @@ if (isset($_SESSION['user_id'])) {
 						JOIN (SELECT Title, Author_id, Isbn, Year, Publisher FROM Books WHERE Book_id IN
 							(SELECT Book_id FROM Reading_List_Entries WHERE List_id = {$_GET['list']})) b
 					 	ON a.Author_id = b.Author_id";
+						# Selects the identifying book and author information for books in the
+						# user's selected reading list. Used to show what books the user already
+						# has in their reading list.
+
 						if ($result = mysqli_query($connection, $sql)) {
 							while($row = mysqli_fetch_assoc($result)) {
 							?>

@@ -29,7 +29,8 @@ starts a session if their login succeeds.
 
 
     $query = "SELECT * FROM users WHERE user_name ='$username'";
-
+              # Selects all users where the username is equal to the given user name.
+              # Note: can only retrieve 0-1 values since usernames are unique.
 
     $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
 

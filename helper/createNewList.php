@@ -18,9 +18,15 @@ if (mysqli_connect_errno()) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (isset($list_name)) {
     $sql = "SELECT list_id FROM reading_lists WHERE name LIKE '${list_name}' AND user_id = ${user_id}";
+    # Selects the list id from reading_lists with the given user id and list name.
+    # Used to check for existing lists with the given name under the same user.
+
     $result = mysqli_query($connection, $sql);
     if ($result->num_rows == 0) {
       $sql = "INSERT INTO reading_lists (name, user_id) VALUES ('${list_name}', ${user_id})";
+      # Inserts the given values into the reading_lists table.
+      # Creates a new reading list for the user.
+
       $next = mysqli_query($connection, $sql);
       echo '<script>alert("Successfully created the reading list.");location="/unseen_library/profile.php"</script>';
     } else {

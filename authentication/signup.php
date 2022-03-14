@@ -31,6 +31,8 @@ if (isset($_POST["register"])) {
 
     $sql ="INSERT INTO `users` (`user_name`, `first_name`, `last_name`, `email`, `phone`, `password`)
     VALUES ('$username','$First_name','$Last_name','$email','$phone','$password')";
+    # Inserts the user into the users table with the given values.
+
     if ($conn->query($sql) == TRUE) {
         echo '<script>alert("Registration was successful!");Location="profile.php"</script>';
     } else {

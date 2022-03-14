@@ -87,6 +87,9 @@ error_reporting(E_ERROR | E_PARSE);
 								die(mysqli_connect_error());
 							}
 							$sql = "SELECT DISTINCT Genre FROM Books";
+							# Selects genres from books without duplicates.
+							# Used to display the selection of genres in the databse.
+
 							if ($result = mysqli_query($connection, $sql)) {
 								while ($row = mysqli_fetch_assoc($result)) {
 									echo '<option value="' . $row['Genre'] . '">';
@@ -140,6 +143,10 @@ error_reporting(E_ERROR | E_PARSE);
 										FROM Locations l JOIN (SELECT Book_id, Title, Genre, First_name, Last_name, Isbn, Year, Publisher, Location_id FROM Books b JOIN
 										Authors a ON b.author_id = a.author_id) c ON l.location_id = c.location_id WHERE Title LIKE '%{$title}%' AND Last_name LIKE '%{$author}%'
 										AND Genre LIKE '%{$_GET['genre']}%' AND Zipcode LIKE '%{$zipcode}%') b ON b.Book_id = r.book_id WHERE avg >= {$minRating}";
+						# Selects the book, author, location, and rating information from the database
+						# with the given filters and selections. Used to allow the user to
+						# refine their search and cater their search.
+
 						if ($result = mysqli_query($connection, $sql)) {
 							while($row = mysqli_fetch_assoc($result)) {
 								?>
@@ -180,7 +187,10 @@ error_reporting(E_ERROR | E_PARSE);
 							die(mysqli_connect_error());
 						}
 						$_SESSION['curr_list'] = $_POST['list'];
-						$sql= "SELECT List_id, Name FROM READING_LISTS WHERE User_id = '${user_id}'"; // Have user_id = user id from session!!!
+						$sql= "SELECT List_id, Name FROM READING_LISTS WHERE User_id = '${user_id}'";
+						# Selects the reading list the user already has.
+						# Used for users to select a reading list to add a book to.
+
 						if ($result = mysqli_query($connection, $sql)) {
 							while ($row = mysqli_fetch_assoc($result)) {
 								echo '<option value="' . $row['List_id'] . '">';
@@ -197,6 +207,9 @@ error_reporting(E_ERROR | E_PARSE);
 						if (isset($_SESSION['curr_list'])) {
 							$list = $_SESSION['curr_list'];
 							$sql = "SELECT Name FROM READING_LISTS WHERE List_id = ${list}";
+							# Selects the name of the reading list with the given list id.
+							# Used to determine if a list is currently selected or not.
+
 							if ($result = mysqli_query($connection, $sql)) {
 								$row = mysqli_fetch_assoc($result);
 								echo 'Your current selected list is: ' . $row['Name'];
@@ -253,6 +266,10 @@ error_reporting(E_ERROR | E_PARSE);
 						JOIN Location_Ratings lr ON l.location_id = lr.location_id WHERE address IS NOT NULL
 										AND rating >= {$_GET['minLocationRating']} AND zipcode LIKE '%{$_GET['search-zip']}%'
 										AND city LIKE '%{$_GET['search-city']}%'";
+						# Selects the location information for the location with the given
+						# filters and selections. Lets users search for location information
+						# and cater their search to their desire.
+						
 						if ($result = mysqli_query($connection, $sql)) {
 							while($row = mysqli_fetch_assoc($result)) {
 								?>

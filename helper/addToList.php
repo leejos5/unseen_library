@@ -20,10 +20,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (isset($_SESSION['curr_list'])) {
     $sql = "SELECT entry_id FROM Reading_List_Entries WHERE book_id =
             ${book_id} AND list_id = ${list_id}";
+    # Selects the entry id from all of the reading list entries with the given book and list id.
+    # Used to check if the given book is already in the given list.
+
     $result = mysqli_query($connection, $sql);
     if ($result->num_rows == 0) {
       $sql = "INSERT INTO Reading_List_Entries (List_id, Book_id) VALUES
       (${list_id}, ${book_id})";
+      # Inserts the given book id and list id into the Reading_List_Entries table.
+      # Creates a new reading list entry of book book_id in list list_id.
+
       $result = mysqli_query($connection, $sql);
       echo '<script>alert("Succesfully added to the reading list.");location="/unseen_library/search.php";</script>';
       unset($_SESSION['curr_list']);

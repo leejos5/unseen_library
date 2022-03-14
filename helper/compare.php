@@ -86,6 +86,8 @@ $username = $_SESSION['otherUser'];
 						die(mysqli_connect_error());
 					}
 					$sql= "SELECT List_id, Name FROM READING_LISTS WHERE User_id = '{$_SESSION['user_id']}'";
+					# Selects the names and list id's of the user's reading lists.
+					# Used to retrieve and display the user's current reading lists.
 					if ($result = mysqli_query($connection, $sql)) {
 						while ($row = mysqli_fetch_assoc($result)) {
 							echo '<option value="' . $row['List_id'] . '">';
@@ -105,6 +107,9 @@ $username = $_SESSION['otherUser'];
             die(mysqli_connect_error());
           }
           $sql= "SELECT List_id, Name FROM Reading_Lists WHERE User_id = (SELECT User_id FROM Users WHERE User_name LIKE '${username}')";
+					# Selects the list id and name from Reading_Lists for the other user's username.
+					# Used to retrieve and display the set other user's reading lists.
+
 					if ($result = mysqli_query($connection, $sql)) {
             while ($row = mysqli_fetch_assoc($result)) {
               echo '<option value="' . $row['List_id'] . '">';
@@ -139,6 +144,10 @@ $username = $_SESSION['otherUser'];
                     SELECT Book_id FROM Reading_List_Entries WHERE List_id = {$_GET['list1']} AND
                     Book_id IN (SELECT Book_id FROM Reading_List_Entries WHERE List_id = {$_GET['list2']}))) b
                     ON a.Author_id = b.Author_id";
+						# Selects the idnetifying book and uathor information from the database from
+						# the two given lists that both of the users have.
+						# Used to determine and display which books the users have in common in their lists.
+
 						if ($result = mysqli_query($connection, $sql)) {
 							while($row = mysqli_fetch_assoc($result)) {
 							?>

@@ -96,6 +96,9 @@ session_start(); ?>
                 die(mysqli_connect_error());
               }
               $sql = "SELECT user_name FROM users HAVING user_name LIKE '%{$_GET['search-user']}%'";
+							# Selects the username from users that is similar to the given name.
+							# Allows users to search for other users in the database.
+
               if ($result = mysqli_query($connection, $sql)) {
                 while($row = mysqli_fetch_assoc($result)) {
                   ?>
