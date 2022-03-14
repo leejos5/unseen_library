@@ -3,9 +3,8 @@ Name: Joshua lee
 Date: March 13, 2022
 Section: TCSS 445 A
 
-social.php allows users to search and select a different user in the database
-and compare reading lists with them to see if they have any matching books in the
-specified reading lists.
+seeReview.php allows users to search for and see reviews for different books
+by different users in the database.
 -->
 
 <?php
@@ -87,8 +86,8 @@ $title = $_POST['booktitle'];
               $sql = "SELECT  user_name, review, rating FROM users u JOIN
                         (SELECT book_id, user_id, review, rating FROM book_ratings WHERE book_id = ${book_id})
                          br ON u.user_id = br.user_id ORDER BY rating DESC";
-							# Selects the username from users that is similar to the given name
-							# Allows users to search for other users in the database.
+							# Selects the username, review, and rating left on the given book.
+              # Used to find all reviews and identifying reviewer info for the user and book.
 
               if ($result = mysqli_query($connection, $sql)) {
                 while($row = mysqli_fetch_assoc($result)) {
@@ -103,7 +102,6 @@ $title = $_POST['booktitle'];
                 mysqli_free_result($result);
               }
           ?>
-				<!-- implement php to fill table -->
 					</table>
 				</form>
 			</section>
