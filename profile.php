@@ -100,6 +100,7 @@ if (isset($_SESSION['user_id'])) {
 					}
 					?>
 				</select>
+			</form>
 				<?php
 				if ($_SERVER["REQUEST_METHOD"] == "GET") {
 					if (isset($_GET['list'])) {
@@ -112,14 +113,15 @@ if (isset($_SESSION['user_id'])) {
 										<th scope="col">ISBN</th>
 										<th scope="col">Year</th>
 										<th scope="col">Publisher</th>
+										<th scope="col">Review</th>
 								</tr>
 						</thead>
 						<?php
 						if (mysqli_connect_errno()) {
 							die(mysqli_connect_error());
 						}
-						$sql = "SELECT Title, First_name, Last_name, Isbn, Year, Publisher FROM Authors a
-						JOIN (SELECT Title, Author_id, Isbn, Year, Publisher FROM Books WHERE Book_id IN
+						$sql = "SELECT b.Book_id, Title, First_name, Last_name, Isbn, Year, Publisher FROM Authors a
+						JOIN (SELECT b.Book_id, Title, Author_id, Isbn, Year, Publisher FROM Books b WHERE Book_id IN
 							(SELECT Book_id FROM Reading_List_Entries WHERE List_id = {$_GET['list']})) b
 					 	ON a.Author_id = b.Author_id";
 						# Selects the identifying book and author information for books in the
@@ -135,6 +137,14 @@ if (isset($_SESSION['user_id'])) {
 								<td><?php echo $row['Isbn'] ?></td>
 								<td><?php echo $row['Year'] ?></td>
 								<td><?php echo $row['Publisher'] ?></td>
+								<td>
+									<form method="POST" action="helper/leaveReview.php">
+										<input type="hidden" name="book_id" value="<?php echo $row['Book_id']?>"/>
+										<input type="text" name="rating" required placeholder="Rate 1-5" required />
+										<input type="text" name="review" required placehoder="1 Word Summary" required />
+										<input type="Submit" class="btn btn-dark" value="Leave Rating" />
+									</form>
+								</td>
 							</tr>
 							<?php
 							}
@@ -144,7 +154,6 @@ if (isset($_SESSION['user_id'])) {
 				}
 				?>
 				</table>
-			</form>
 			<form method="POST" action="helper/createNewList.php" class="ra">
 				<input type="text" required placeholder="New List Name" name="list-name" />
 				<button type="submit" class="btn btn-success">Create New Reading List!</button>
