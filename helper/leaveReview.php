@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "SELECT * FROM book_ratings WHERE book_id =
             ${book_id} AND user_id = {$_SESSION['user_id']}";
     # Selects the entry id from all of the reading list entries with the given book and list id.
-    # Used to check if the given book is already in the given list.
+    # Used to check if a review for the book by the user already exists.
 
     $result = mysqli_query($connection, $sql);
     if ($result->num_rows == 0) {
