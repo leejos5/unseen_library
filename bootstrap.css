@@ -11327,6 +11327,8 @@ a.disabled {
 #home-logo {
   padding: 25px;
   margin-top: 75px;
+  height: 500px;
+  width: 500px;
 }
 
 .indexChild {
@@ -11337,4 +11339,5 @@ a.disabled {
 #loginindex {
   font-size: 30px;
   margin-left: 50px;
+  margin-top: 100px;
 }

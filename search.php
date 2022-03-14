@@ -196,7 +196,7 @@ error_reporting(E_ERROR | E_PARSE);
 						}
 						?>
 					</table>
-					<form method="POST" action="search.php">
+					<form method="POST" action="helper/setList.php">
 					<select name="list" id="list" onchange="this.form.submit();">
 						<option selected>Select a Reading List</option>
 						<?php
@@ -204,7 +204,6 @@ error_reporting(E_ERROR | E_PARSE);
 						if (mysqli_connect_errno()) {
 							die(mysqli_connect_error());
 						}
-						$_SESSION['curr_list'] = $_POST['list'];
 						$sql= "SELECT List_id, Name FROM READING_LISTS WHERE User_id = '${user_id}'";
 						# Selects the reading list the user already has.
 						# Used for users to select a reading list to add a book to.
