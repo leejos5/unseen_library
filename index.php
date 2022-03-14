@@ -54,18 +54,23 @@ $_SESSION['wd'] = getcwd();
           </li>
       </ul>
       </div>
-</nav>
-        <section id="about-header">
-		 <div>
-               <h1>Welcome to Unseen Library</h1>
-               <hr />
-               <p class="lead">
-                              Unseen Library applictaion gives an easy way of getting books for users from different location. Users can
-                              choose any genre, read a book from a nearest bookstores or libraries. Share your idea and rate
-                              your best books and best authors of the year.  </p>
-
-         		 	 <div class="image">
-         				<img class="about" src="img/Alice.jpg"/>
+		</nav>
+    <section id="about-header">
+		 	<div>
+         <h1>Welcome to Unseen Library</h1>
+         <hr />
+         <p class="lead">
+				 	Unseen Library applictaion gives an easy way of getting books for users from different location. Users can
+					choose any genre, read a book from a nearest bookstores or libraries. Share your idea and rate
+        	your best books and best authors of the year.
+				 	</p>
+				</div>
+				<div>
+					<img src ="img/unseenlibrarylogo.png" id="home-logo" class="indexChild"/>
+					<div class="indexChild">
+						<h1 class="pic">Some of the titles we have:</h1>
+   		 	 	<div class="image">
+       				<img class="about" src="img/Alice.jpg"/>
          				<div class="image__overlay">
          				     <p class="image__description">
          				         Located in Three tree books
@@ -139,8 +144,8 @@ $_SESSION['wd'] = getcwd();
                                    Located in University of Washington Tacoma
                                </p>
                               </div>
-
                            </div>
+
                         <div class="image">
                              <img class="about" src="img/Prisoner.jpg"/>
                              <div class="image__overlay">
@@ -149,8 +154,9 @@ $_SESSION['wd'] = getcwd();
                              </p>
                         </div>
                     </div>
-         	  </div>
             </div>
+						<button href="login.php" id="loginindex" class="btn btn-success">Log In</button>
+					</div>
         </section>
     </body>
 </html>
