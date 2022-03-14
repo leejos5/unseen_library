@@ -69,7 +69,6 @@ require_once($_SESSION['wd'] . '/config.php');
 					</div>
 					<br />
 					<button type="submit" name = "login" class="btn btn-primary">Login</button>
-					<a href="testSession.php">Test Session Start</a>
 				</fieldset>
         </form>
 			</div>
@@ -79,28 +78,28 @@ require_once($_SESSION['wd'] . '/config.php');
 				  <fieldset>
 				    <div class="form-group">
 				      <label for="exampleInputEmail1" class="form-label mt-4">Email address</label>
-				      <input type="email" class="form-control" name = "email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
+				      <input type="email" class="form-control" name = "email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email" required>
 				      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 				    </div>
 					<div class="form-group">
 						 <label for="signupUsername" class="form-label mt-4">Username</label>
-						 <input type="signupUsername" class="form-control" name ="user_name" id="signupUsername" placeholder="Username">
+						 <input type="signupUsername" class="form-control" name ="user_name" id="signupUsername" placeholder="Username" required>
 					</div>
 					<div class="form-group">
 						 <label for="signupFirstname" class="form-label mt-4">First_name</label>
-						 <input type="signupFirstname" class="form-control" name = "first_name" id="signupFirstname" placeholder="First Name">
+						 <input type="signupFirstname" class="form-control" name = "first_name" id="signupFirstname" placeholder="First Name" required>
 					</div>
 					<div class="form-group">
 						 <label for="signupLastname" class="form-label mt-4">Last_name</label>
-						 <input type="signupLastname" class="form-control" name = "last_name" id="signupLastname" placeholder="Last Name">
+						 <input type="signupLastname" class="form-control" name = "last_name" id="signupLastname" placeholder="Last Name" required>
 					</div>
 					<div class="form-group">
 						 <label for="signupPhone" class="form-label mt-4">Phone</label>
-						 <input type="signupPhone" class="form-control" name = "phone" id="signupPhone" placeholder="Phone">
+						 <input type="signupPhone" class="form-control" name = "phone" id="signupPhone" placeholder="Phone" required>
 					</div>
 					<div class="form-group">
 				      <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
-				      <input type="password" class="form-control" name ="password" id="exampleInputPassword1" placeholder="Password">
+				      <input type="password" class="form-control" name ="password" id="exampleInputPassword1" placeholder="Password" required>
 				    </div>
 						<br />
 						<button type="submit" name = "register" class="btn btn-primary">Sign up</button>

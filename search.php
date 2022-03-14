@@ -192,6 +192,20 @@ error_reporting(E_ERROR | E_PARSE);
 						?>
 					</select>
 					</form>
+					<p>
+						<?php
+						if (isset($_SESSION['curr_list'])) {
+							$list = $_SESSION['curr_list'];
+							$sql = "SELECT Name FROM READING_LISTS WHERE List_id = ${list}";
+							if ($result = mysqli_query($connection, $sql)) {
+								$row = mysqli_fetch_assoc($result);
+								echo 'Your current selected list is: ' . $row['Name'];
+							}
+						} else {
+							echo 'You do not have a list selected.';
+						}
+						?>
+					</p>
 			</section>
 			<section id="about-header">
 				<h1>Locations Search</h1>

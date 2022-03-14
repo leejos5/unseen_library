@@ -29,7 +29,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       unset($_SESSION['curr_list']);
     } else {
       echo '<script>alert("The book is already in the list!");location="/unseen_library/search.php";</script>';
-      unset($_SESSION['curr_list']);
     }
   } else {
     echo '<script>alert("Please select a reading list.");location="/unseen_library/search.php";</script>';

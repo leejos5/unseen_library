@@ -22,11 +22,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows == 0) {
       $sql = "INSERT INTO reading_lists (name, user_id) VALUES ('${list_name}', ${user_id})";
       $next = mysqli_query($connection, $sql);
-      echo '<script>alert("Successfully created the reading list.")location="/unseen_library/profile.php";</script>';
+      echo '<script>alert("Successfully created the reading list.");location="/unseen_library/profile.php"</script>';
     } else {
-      echo '<script>alert("You already have a reading list with that name.");location="/unseen_library/profile.php";</script>';
+      echo '<script>alert("You already have a reading list with that name.");location="/unseen_library/profile.php"</script>';
     }
   } else {
-    echo '<script>alert("An error occurred. Please try again later.");location="/unseen_library/profile.php";</script>';
+    echo '<script>alert("An error occurred. Please try again later.");location="/unseen_library/profile.php"</script>';
   }
 }
