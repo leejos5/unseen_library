@@ -11306,11 +11306,6 @@ input[type="range"] {
     opacity: 1;
 }
 
-.image__price {
-    font-size: 1em;
-    font-weight: bold;
-}
-
 .image__description {
     font-size: 0.75em;
     margin-top: 0.25em;
