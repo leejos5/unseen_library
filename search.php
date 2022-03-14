@@ -138,11 +138,16 @@ error_reporting(E_ERROR | E_PARSE);
 						}
 						$minRating = intval($_GET['minBookRating']);
 						$sql =
-						"SELECT r.Book_id, Title, Genre, First_name, Last_name, Isbn, Year, Publisher, Address, City, State, Zipcode, avg FROM (SELECT book_id, AVG(Rating)
-						 as avg FROM book_ratings GROUP BY Book_id) r JOIN (SELECT Book_id, Title, Genre, First_name, Last_name, Isbn, Year, Publisher, Address, City, State, Zipcode
-										FROM Locations l JOIN (SELECT Book_id, Title, Genre, First_name, Last_name, Isbn, Year, Publisher, Location_id FROM Books b JOIN
-										Authors a ON b.author_id = a.author_id) c ON l.location_id = c.location_id WHERE Title LIKE '%{$title}%' AND Last_name LIKE '%{$author}%'
-										AND Genre LIKE '%{$_GET['genre']}%' AND Zipcode LIKE '%{$zipcode}%') b ON b.Book_id = r.book_id WHERE avg >= {$minRating}";
+
+
+						"SELECT e.book_id, Title, Genre, First_name, Last_name, Isbn, Year, Publisher, avg, Address, City, State, Zipcode FROM locations l JOIN
+							(SELECT location_id, bl.book_id, Title, Genre, First_name, Last_name, Isbn, Year, Publisher, avg FROM book_locations bl JOIN
+								(SELECT c.Book_id, Title, Genre, First_name, Last_name, Isbn, Year, Publisher, AVG(Rating) as avg FROM book_ratings br JOIN
+						 			(SELECT Book_id, Title, Genre, First_name, Last_name, Isbn, Year, Publisher
+									FROM Books b JOIN Authors a ON b.author_id = a.author_id WHERE Last_name LIKE '%${author}%' AND Title LIKE '%${title}' AND Genre LIKE '%{$_GET['genre']}%') c
+								ON c.Book_id = br.book_id GROUP BY c.Book_id) d
+							ON d.Book_id = bl.book_id GROUP BY book_id) e
+						ON l.location_id = e.location_id WHERE Zipcode LIKE '%${zipcode}' AND avg >= ${minRating}";
 						# Selects the book, author, location, and rating information from the database
 						# with the given filters and selections. Used to allow the user to
 						# refine their search and cater their search.

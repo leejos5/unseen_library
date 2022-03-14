@@ -12,7 +12,7 @@ session_start();
 if (isset($_SESSION['user_id'])) {
 	$user_id = $_SESSION['user_id'];
 	$user_name = $_SESSION['user_fname'] . " " . $_SESSION['user_lname'];
-	$user_age = $_SESSION['user_age'];
+	$birth_year = $_SESSION['birth_year'];
 	$user_email = $_SESSION['user_email'];
 } else {
 	echo '<script>alert("You are not signed in.");location="authentication/login.php"</script>';
@@ -70,7 +70,7 @@ if (isset($_SESSION['user_id'])) {
 				<img src="img/portrait.png" class="m-xxl-4 pic" height=300px width=300px />
 				<div class="m-xxl-4 desc pic">
 					<h3><?php echo $_SESSION['user_name'] ?></h3>
-					<h3><?php echo $user_age ?> Years Old</h3>
+					<h3>Born in: <?php echo $birth_year?></h3>
 					<h3><?php echo $user_email ?></h3>
 				</div>
 			</div>

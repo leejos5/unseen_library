@@ -52,7 +52,7 @@ starts a session if their login succeeds.
     $_SESSION['user_fname'] = $row['first_name'];
     $_SESSION['user_lname'] = $row['last_name'];
     $_SESSION['user_phone'] = $row['phone'];
-    $_SESSION['user_age'] = $row['age'];
+    $_SESSION['birth_year'] = $row['year_of_birth'];
     echo '<script>alert("Login successful!");location="/unseen_library/index.php"</script>';
     //die();
     $connect->close();
