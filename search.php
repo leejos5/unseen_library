@@ -166,7 +166,7 @@ error_reporting(E_ERROR | E_PARSE);
 									<td><?php echo $row['avg']?></td>
 									<td>
 										<form method ="POST" action="helper/addToList.php">
-											<input type="hidden" name="book_id" value="<?php echo $row['Book_id']?>"/>
+											<input type="hidden" name="bookid" value="<?php echo $row['book_id']?>"/>
 											<input type="Submit" class="btn btn-dark" value="Add to List"
 											<?php
 											if (!isset($_SESSION['user_id'])) {
