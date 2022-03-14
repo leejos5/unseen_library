@@ -11,22 +11,19 @@ results to the selected list. It checks to make sure duplicate books are not add
 session_start();
 require_once($_SESSION['wd'] . '/config.php');
 $list_id = $_SESSION['curr_list'];
-$book_id = $_POST['book_id'];
+$bookid = $_POST['bookid'];
 $connection = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
 if (mysqli_connect_errno()) {
   die(mysqli_connect_error());
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (isset($_SESSION['curr_list'])) {
-    $sql = "SELECT entry_id FROM Reading_List_Entries WHERE book_id =
-            ${book_id} AND list_id = ${list_id}";
-    # Selects the entry id from all of the reading list entries with the given book and list id.
-    # Used to check if the given book is already in the given list.
+    $sql = "SELECT book_id, list_id FROM reading_list_entries r WHERE r.list_id = ${list_id} AND r.book_id = ${bookid}";
 
     $result = mysqli_query($connection, $sql);
     if ($result->num_rows == 0) {
       $sql = "INSERT INTO Reading_List_Entries (List_id, Book_id) VALUES
-      (${list_id}, ${book_id})";
+      (${list_id}, ${bookid})";
       # Inserts the given book id and list id into the Reading_List_Entries table.
       # Creates a new reading list entry of book book_id in list list_id.
 
