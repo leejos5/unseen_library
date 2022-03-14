@@ -1,59 +1,94 @@
 
-# Unseen_Library
+Unseen_Library
 
-This project create a way of getting both public and private libraries and bookstores in one web page. It was designed for the users to create an account by signing in and login to the web account. Use php and css code files and image, helper, and authentiction folders to create the front and back end of the web pages.  
+CONTENTS OF THE FILE------------------------------------------------------------
+Introduction
+Requirements
+Installation/How To
+Contents/Structure
+Developers
 
-## How to run the file
+INTRODUCTION--------------------------------------------------------------------
+Unseen Library is a program that simulates a libraries database that compiles
+information from public libraries and private bookstores into a single location.
+It is aimed towards making the libraries search much simpler and more convenient
+for users to find just the right book while also providing a social media aspect
+and allowing users to socialize through books.
 
-1. Download the unseen_library.sql file
-2. Download the zip file 
-3. Use XAMPP to run the project
-4. localhost/unseen_library-main/index.php
-5. Create user account or login with an existed account 
-6. Search for books by the title or authors name 
-7. Search the location of the books
-8. Add a reading list
+Built With:
+- LAMP STACK:
+  - Linux
+  - Apache
+  - MySQL
+  - PhpMYAdmin
+  - Bootstrap
 
-
-
-## Authors Name
-
-- Joshua Lee
-- Cordel Hampshire
-- Lidiya Abose
-- Rin Pham
-
-## Detail Info
-
-Sigin :
-
-    Login
-
-        username- need a unique user's name
-        password- user's password
-
-    Sign-Up
-
-        Email address - Enter email account
-        username - New user name
-        First_name - Enter first name
-        Last_name- Enter last name
-        phone- Give phone number
-        password- New password
-
-Book Search
-
-    Title- Book title 
-    Gener- Types of book gener
-    Author- Book authors
-    Isbn- Book's isbn number 
-    Year- Book's published year
-    Publisher- Book's publisher name
-    Location- Book's location  
-    Rating- Give a rate
-    Add to List- Add book's to reading lists
+REQUIREMENTS--------------------------------------------------------------------
+# Requirements
+- XAMPP (or other local LAMP solution)
 
 
+INSTALLATION/HOW TO-------------------------------------------------------------
+Unseen Library was creating using a XAMPP web-server solution. These
+instructions will describe how to run the application with XAMPP.
+
+1. Download the zip file containing the project contents.
+2. Open XAMPP and start the Apache and MySQL Services.
+3. Import the .sql file into phpMyAdmin to import the database.
+4. Import the files in code.zip into the xampp directory xampp/htdocs/.
+   The project should now be located at xampp/htdocs/unseen_library.
+4. Access the website through your local port localhost/unseen_library.
+
+You now have access and are able to run the Unseen Library application.
+
+CONTENTS/STRUCTURE
+
+File contents:
+- about.php
+- config.php
+- index.php
+- profile.php
+- search.php
+- social.php
+- bootstrap.css
+- authentication
+  > connect.php
+  > login.php
+  > logout.php
+  > process.php
+  > session.php
+  > signup.php
+- helper
+  > addTolist.php
+  > compare.php
+  > createNewList.php
+  > setOther.php
+- img
+  > Alice.jpg
+  > ...
+  > Wuthering.jpg
+
+Organization:
+The files are organized so the main web pages are listed in the main directory
+and the rest of the files are maintained in their relevant subdirectories.
+Authentication pages and scripts are contained in the authentication folder,
+while any helper scripts are in the helper folder and finally the images are
+contained in the img folder.
 
 
+DEVELOPERS ---------------------------------------------------------------------
+Developer Team:
+ Cordel Hampshire
+  > Database Design
+  > Database Management
 
+ Lidiya Abose
+  > Front End Development
+
+ Rin Pham
+  > Back End Development
+  > Database Design
+
+ Joshua Lee
+  > Front End Development
+  > Back End Development
