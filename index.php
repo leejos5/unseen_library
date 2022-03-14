@@ -155,7 +155,7 @@ $_SESSION['wd'] = getcwd();
                         </div>
                     </div>
             </div>
-						<button href="login.php" id="loginindex" class="btn btn-success">Log In</button>
+						<a href="authentication/login.php" id="loginindex" class="btn btn-success">Log In</a>
 					</div>
         </section>
     </body>

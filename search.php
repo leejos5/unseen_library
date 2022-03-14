@@ -88,7 +88,7 @@ error_reporting(E_ERROR | E_PARSE);
 							}
 							$sql = "SELECT DISTINCT Genre FROM Books";
 							# Selects genres from books without duplicates.
-							# Used to display the selection of genres in the databse.
+							# Used to display the selection of genres in the database.
 
 							if ($result = mysqli_query($connection, $sql)) {
 								while ($row = mysqli_fetch_assoc($result)) {
@@ -269,7 +269,7 @@ error_reporting(E_ERROR | E_PARSE);
 						# Selects the location information for the location with the given
 						# filters and selections. Lets users search for location information
 						# and cater their search to their desire.
-						
+
 						if ($result = mysqli_query($connection, $sql)) {
 							while($row = mysqli_fetch_assoc($result)) {
 								?>

@@ -95,6 +95,7 @@ session_start(); ?>
               if (mysqli_connect_errno()) {
                 die(mysqli_connect_error());
               }
+							
               $sql = "SELECT user_name FROM users HAVING user_name LIKE '%{$_GET['search-user']}%'";
 							# Selects the username from users that is similar to the given name.
 							# Allows users to search for other users in the database.
@@ -120,7 +121,7 @@ session_start(); ?>
 					<input type="Submit" class="btn btn-primary" name="submit" value="Search/Set Comparison" />
 					<a href="helper/compare.php" class="btn btn-success
 					<?php
-						if (!isset($_SESSION['user_id'])) {
+						if (!isset($_SESSION['user_id']) && !isset($_SESSION['otherUser'])) {
 							echo 'disabled';
 						}
 						?>
