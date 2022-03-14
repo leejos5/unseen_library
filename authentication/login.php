@@ -101,6 +101,10 @@ require_once($_SESSION['wd'] . '/config.php');
 				      <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
 				      <input type="password" class="form-control" name ="password" id="exampleInputPassword1" placeholder="Password" required>
 				    </div>
+					<div class="form-group">
+				      <label for="signupYearOfBirth" class="form-label mt-4">Year of Birth</label>
+				      <input type="signupYearOfBirth" class="form-control" name ="year_of_birth" id="signupYearOfBirth" placeholder="Year of Birth" required>
+				    </div>
 						<br />
 						<button type="submit" name = "register" class="btn btn-primary">Sign up</button>
 					</fieldset>

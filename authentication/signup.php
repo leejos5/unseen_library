@@ -28,9 +28,10 @@ if (isset($_POST["register"])) {
     $email      = $_POST['email'];
     $phone      = $_POST['phone'];
     $password   = $_POST['password'];
+    $year_of_birth = $_POST['year_of_birth'];
 
-    $sql ="INSERT INTO `users` (`user_name`, `first_name`, `last_name`, `email`, `phone`, `password`)
-    VALUES ('$username','$First_name','$Last_name','$email','$phone','$password')";
+    $sql ="INSERT INTO `users` (`user_name`, `first_name`, `last_name`, `email`, `phone`, `password`, `year_of_birth`)
+    VALUES ('$username','$First_name','$Last_name','$email','$phone','$password', $year_of_birth)";
     # Inserts the user into the users table with the given values.
 
     if ($conn->query($sql) == TRUE) {
