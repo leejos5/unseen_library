@@ -62,6 +62,9 @@ File contents:
   > addTolist.php
   > compare.php
   > createNewList.php
+  > leaveReview.php
+  > seeReview.php
+  > setList.php 
   > setOther.php
 - img
   > Alice.jpg
