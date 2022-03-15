@@ -144,7 +144,7 @@ $username = $_SESSION['otherUser'];
                     SELECT Book_id FROM Reading_List_Entries WHERE List_id = {$_GET['list1']} AND
                     Book_id IN (SELECT Book_id FROM Reading_List_Entries WHERE List_id = {$_GET['list2']}))) b
                     ON a.Author_id = b.Author_id";
-						# Selects the idnetifying book and uathor information from the database from
+						# Selects the identifying book and author information from the database from
 						# the two given lists that both of the users have.
 						# Used to determine and display which books the users have in common in their lists.
 
